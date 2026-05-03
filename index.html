@@ -13,7 +13,6 @@
       color: #fff;
     }
 
-    /* NAVIGATION */
     nav {
       position: fixed;
       top: 0; width: 100%;
@@ -49,7 +48,6 @@
 
     nav ul li a:hover { color: #c9a84c; }
 
-    /* HERO */
     .hero {
       height: 100vh;
       background: linear-gradient(135deg, #1a0a00, #2c1a0e, #0a0a0a);
@@ -91,7 +89,6 @@
 
     .btn:hover { background: #e0c070; }
 
-    /* ABOUT */
     .about {
       padding: 100px 60px;
       display: flex;
@@ -112,7 +109,6 @@
       font-size: 16px;
     }
 
-    /* GALLERY */
     .gallery {
       padding: 100px 60px;
       background: #0a0a0a;
@@ -143,11 +139,11 @@
       font-size: 14px;
       border-radius: 4px;
       transition: border 0.3s;
+      overflow: hidden;
     }
 
     .gallery-item:hover { border-color: #c9a84c; }
 
-    /* FEATURES */
     .features {
       padding: 100px 60px;
       background: #111;
@@ -189,7 +185,6 @@
 
     .feature-card p { color: #999; font-size: 14px; line-height: 1.7; }
 
-    /* CONTACT */
     .contact {
       padding: 100px 60px;
       background: #0a0a0a;
@@ -225,7 +220,6 @@
       text-transform: uppercase;
     }
 
-    /* FOOTER */
     footer {
       background: #000;
       text-align: center;
@@ -237,7 +231,6 @@
 
     footer span { color: #c9a84c; }
 
-    /* RESPONSIVE */
     @media (max-width: 768px) {
       .hero h1 { font-size: 32px; }
       .gallery-grid,
@@ -249,7 +242,6 @@
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
     <div class="logo">Mona Daniels Villa</div>
     <ul>
@@ -260,14 +252,12 @@
     </ul>
   </nav>
 
-  <!-- HERO -->
   <section class="hero">
     <h1>Mona Daniels Villa</h1>
     <p>Experience the pinnacle of luxury living. A place where elegance meets comfort in every detail.</p>
     <a href="#about" class="btn">Discover More</a>
   </section>
 
-  <!-- ABOUT -->
   <section class="about" id="about">
     <div class="about-text">
       <h2>About The Villa</h2>
@@ -275,20 +265,30 @@
     </div>
   </section>
 
-  <!-- GALLERY -->
   <section class="gallery" id="gallery">
     <h2>Gallery</h2>
     <div class="gallery-grid">
-      <div class="gallery-item">📷 Add Your Photo</div>
-      <div class="gallery-item">📷 Add Your Photo</div>
-      <div class="gallery-item">📷 Add Your Photo</div>
-      <div class="gallery-item">📷 Add Your Photo</div>
-      <div class="gallery-item">📷 Add Your Photo</div>
-      <div class="gallery-item">📷 Add Your Photo</div>
+      <div class="gallery-item">
+        <img src="IMG_9019.jpeg" alt="Spa & Jacuzzi" style="width:100%; height:100%; object-fit:cover;" />
+      </div>
+      <div class="gallery-item">
+        <img src="IMG_9020.jpeg" alt="Dining Area" style="width:100%; height:100%; object-fit:cover;" />
+      </div>
+      <div class="gallery-item">
+        <img src="IMG_9021.jpeg" alt="Indoor Pool & Dining" style="width:100%; height:100%; object-fit:cover;" />
+      </div>
+      <div class="gallery-item">
+        <img src="IMG_9022.jpeg" alt="Swimming Pool" style="width:100%; height:100%; object-fit:cover;" />
+      </div>
+      <div class="gallery-item">
+        <img src="IMG_9023.jpeg" alt="Villa Entrance" style="width:100%; height:100%; object-fit:cover;" />
+      </div>
+      <div class="gallery-item">
+        <img src="IMG_9024.jpeg" alt="Villa Exterior" style="width:100%; height:100%; object-fit:cover;" />
+      </div>
     </div>
   </section>
 
-  <!-- FEATURES -->
   <section class="features" id="features">
     <h2>Villa Features</h2>
     <div class="features-grid">
@@ -325,7 +325,6 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section class="contact" id="contact">
     <h2>Get In Touch</h2>
     <p>We would love to hear from you. Reach out to us for more information.</p>
@@ -336,7 +335,6 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <p>&copy; 2025 <span>Mona Daniels Villa</span>. All Rights Reserved.</p>
   </footer>
