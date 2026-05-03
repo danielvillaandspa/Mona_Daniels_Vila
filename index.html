@@ -39,7 +39,6 @@
       direction: rtl;
     }
 
-    /* CURSOR */
     .cursor {
       width: 8px; height: 8px;
       background: var(--gold);
@@ -61,7 +60,6 @@
     }
     .cursor-ring.expand { width: 60px; height: 60px; opacity: 0.3; }
 
-    /* NOISE */
     body::before {
       content: '';
       position: fixed; inset: 0;
@@ -69,7 +67,6 @@
       pointer-events: none; z-index: 9998; opacity: 0.4;
     }
 
-    /* LANGUAGE SWITCHER */
     .lang-switcher {
       position: fixed;
       top: 24px;
@@ -106,7 +103,6 @@
     }
     .lang-btn:hover:not(.active) { color: var(--gold-light); }
 
-    /* WHATSAPP BUBBLE */
     .wa-bubble {
       position: fixed;
       bottom: 28px;
@@ -135,10 +131,7 @@
       0%, 100% { box-shadow: 0 8px 30px rgba(37,211,102,0.35); }
       50% { box-shadow: 0 8px 40px rgba(37,211,102,0.55); }
     }
-    .wa-icon {
-      width: 26px; height: 26px;
-      flex-shrink: 0;
-    }
+    .wa-icon { width: 26px; height: 26px; flex-shrink: 0; }
     .wa-text {
       font-size: 12px;
       font-weight: 500;
@@ -146,7 +139,6 @@
       white-space: nowrap;
     }
 
-    /* NAV */
     nav {
       position: fixed; top: 0; width: 100%;
       padding: 28px 60px;
@@ -204,7 +196,6 @@
     .nav-cta:hover { background: var(--gold) !important; color: var(--dark) !important; }
     .nav-cta::after { display: none !important; }
 
-    /* HERO */
     .hero {
       height: 100vh; position: relative;
       display: flex; flex-direction: column;
@@ -225,7 +216,7 @@
     }
     .hero-img {
       position: absolute; inset: 0;
-      background: url('0015595A-92EA-499B-8667-6E4CCF50ABC6.jpeg') center/cover no-repeat;
+      background: url('IMG_9036.jpeg') center/cover no-repeat;
       opacity: 0.2; z-index: 1;
       transform: scale(1.05);
       animation: heroZoom 20s ease-in-out infinite alternate;
@@ -336,14 +327,12 @@
       from { opacity: 0; } to { opacity: 1; }
     }
 
-    /* DIVIDER */
     .divider {
       width: 100%; height: 1px;
       background: linear-gradient(to right, transparent, var(--gold), transparent);
       opacity: 0.25;
     }
 
-    /* SECTION LABEL */
     .section-label {
       font-size: 9px; letter-spacing: 5px;
       color: var(--gold); text-transform: uppercase;
@@ -355,7 +344,6 @@
       background: var(--gold); flex-shrink: 0;
     }
 
-    /* ABOUT */
     .about {
       padding: 140px 60px;
       display: grid;
@@ -408,11 +396,11 @@
     }
     .about-feat p { font-size: 11px; color: var(--text-muted); line-height: 1.6; margin: 0; }
 
-    /* GALLERY */
     .gallery { padding: 140px 60px; background: var(--dark); }
     .gallery-header {
       display: flex; justify-content: space-between;
       align-items: flex-end; margin-bottom: 56px;
+      gap: 20px;
     }
     .gallery-header h2 {
       font-family: 'Cormorant Garamond', 'Frank Ruhl Libre', serif;
@@ -426,18 +414,19 @@
     }
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: 270px 270px;
+      grid-template-columns: repeat(4, 1fr);
       gap: 10px;
     }
-    .g-item { overflow: hidden; position: relative; cursor: none; }
-    .g-item:nth-child(1) { grid-column: 1/6; grid-row: 1; }
-    .g-item:nth-child(2) { grid-column: 6/9; grid-row: 1; }
-    .g-item:nth-child(3) { grid-column: 9/13; grid-row: 1; }
-    .g-item:nth-child(4) { grid-column: 1/4; grid-row: 2; }
-    .g-item:nth-child(5) { grid-column: 4/9; grid-row: 2; }
-    .g-item:nth-child(6) { grid-column: 9/13; grid-row: 2; }
-    .g-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94); }
+    .g-item {
+      overflow: hidden; position: relative; cursor: none;
+      aspect-ratio: 4 / 3;
+      background: #111;
+    }
+    .g-item img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94);
+      display: block;
+    }
     .g-item:hover img { transform: scale(1.08); }
     .g-overlay {
       position: absolute; inset: 0;
@@ -448,7 +437,6 @@
     .g-item:hover .g-overlay { opacity: 1; }
     .g-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-pale); }
 
-    /* FEATURES */
     .features { padding: 140px 60px; background: var(--dark-2); }
     .features-header { margin-bottom: 70px; }
     .features-header h2 {
@@ -491,7 +479,6 @@
     }
     .feature-card p { font-size: 12px; line-height: 1.9; color: var(--text-muted); font-weight: 300; }
 
-    /* QUOTE STRIP */
     .quote-strip {
       padding: 80px 60px; background: var(--gold);
       text-align: center; position: relative; overflow: hidden;
@@ -515,7 +502,6 @@
       text-transform: uppercase; color: rgba(12,12,12,0.45);
     }
 
-    /* CONTACT */
     .contact {
       padding: 140px 60px; background: var(--dark);
       display: grid; grid-template-columns: 1fr 1fr;
@@ -557,16 +543,30 @@
       display: block; margin-bottom: 4px;
     }
     .contact-item-value { font-size: 13px; color: var(--text); font-weight: 300; }
-    .contact-right { position: relative; }
-    .contact-img { width: 100%; height: 540px; object-fit: cover; }
+    .contact-right { position: relative; min-height: 560px; }
+    .contact-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 540px;
+      object-fit: cover;
+      border-radius: 2px;
+    }
     .contact-img-accent {
       position: absolute; width: 55%; height: 210px;
       object-fit: cover; bottom: -38px; left: -36px;
       border: 4px solid var(--dark);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+    }
+    .contact-img-tiny {
+      position: absolute; width: 38%; height: 160px;
+      object-fit: cover; top: -24px; right: -24px;
+      border: 4px solid var(--dark);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.45);
     }
     body.lang-en .contact-img-accent { left: -36px; right: auto; }
+    body.lang-en .contact-img-tiny { right: -24px; left: auto; }
 
-    /* SOCIAL ROW */
     .social-row {
       display: flex; justify-content: center;
       gap: 16px; padding: 50px 60px 0;
@@ -588,7 +588,6 @@
     .ig-link { font-size: 0; }
     .ig-link svg { width: 20px; height: 20px; }
 
-    /* MAP */
     .map-section {
       height: 380px; background: var(--dark-3);
       position: relative; overflow: hidden; margin-top: 50px;
@@ -615,7 +614,6 @@
     }
     .map-pin-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-light); white-space: nowrap; }
 
-    /* FOOTER */
     footer {
       background: #000; padding: 50px 60px;
       display: flex; justify-content: space-between; align-items: center;
@@ -637,7 +635,6 @@
     }
     .footer-links a:hover { color: var(--gold); }
 
-    /* SCROLL REVEAL */
     .reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.8s ease, transform 0.8s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
     .reveal-delay-1 { transition-delay: 0.12s; }
@@ -645,7 +642,10 @@
     .reveal-delay-3 { transition-delay: 0.36s; }
     .reveal-delay-4 { transition-delay: 0.48s; }
 
-    /* MOBILE */
+    @media (max-width: 1100px) {
+      .gallery-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
     @media (max-width: 900px) {
       nav { padding: 18px 20px; }
       nav.scrolled { padding: 14px 20px; }
@@ -656,33 +656,36 @@
       .hero-stats { display: none; }
       .hero-scroll { display: none; }
       .about, .contact { grid-template-columns: 1fr; padding: 80px 20px; gap: 50px; }
-      .about-img-accent, .contact-img-accent { display: none; }
+      .about-img-accent { display: none; }
       .gallery { padding: 80px 20px; }
-      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-      .g-item { grid-column: auto !important; grid-row: auto !important; height: 190px; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
       .features { padding: 80px 20px; }
       .features-grid { grid-template-columns: 1fr; }
       .quote-strip { padding: 60px 20px; }
       footer { flex-direction: column; text-align: center; padding: 40px 20px; }
       .footer-links { justify-content: center; }
       .social-row { padding: 40px 20px 0; }
+      .contact-right { min-height: 520px; }
+    }
+
+    @media (max-width: 560px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+      .contact-img-tiny { width: 46%; height: 130px; }
+      .contact-img-accent { width: 58%; height: 180px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- CURSOR -->
   <div class="cursor" id="cursor"></div>
   <div class="cursor-ring" id="cursorRing"></div>
 
-  <!-- LANGUAGE SWITCHER -->
   <div class="lang-switcher">
     <button class="lang-btn active" onclick="setLang('he')">עברית</button>
     <button class="lang-btn" onclick="setLang('en')">EN</button>
     <button class="lang-btn" onclick="setLang('ar')">عربي</button>
   </div>
 
-  <!-- WHATSAPP BUBBLE -->
   <a href="https://wa.me/972507771781" target="_blank" class="wa-bubble" title="WhatsApp">
     <svg class="wa-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="16" cy="16" r="16" fill="#25D366"/>
@@ -691,7 +694,6 @@
     <span class="wa-text" data-he="שלחו לנו הודעה" data-en="Chat with us" data-ar="راسلنا الآن">שלחו לנו הודעה</span>
   </a>
 
-  <!-- NAV -->
   <nav id="nav">
     <a href="#" class="nav-logo">
       <span class="nav-logo-main">Mona Daniels</span>
@@ -705,11 +707,11 @@
     </ul>
   </nav>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-bg"></div>
     <div class="hero-img"></div>
     <div class="hero-overlay"></div>
+
     <div class="hero-stats">
       <div class="stat">
         <span class="stat-num">5★</span>
@@ -724,6 +726,7 @@
         <span class="stat-label" data-he="זיכרונות" data-en="Memories" data-ar="ذكريات">זיכרונות</span>
       </div>
     </div>
+
     <div class="hero-content">
       <div class="hero-eyebrow" data-he="וילה יוקרה וספא · עוספיה" data-en="Luxury Villa & Spa · Isfiya" data-ar="فيلا فاخرة وسبا · عسفيا">וילה יוקרה וספא · עוספיה</div>
       <h1 data-he="המקום שבו <em>יוקרה</em><br>הופכת לבית" data-en="Where <em>Luxury</em><br>Becomes Home" data-ar="حيث تصبح <em>الفخامة</em><br>وطناً">המקום שבו <em>יוקרה</em><br>הופכת לבית</h1>
@@ -733,6 +736,7 @@
         <a href="#contact" class="btn-ghost" data-he="הזמינו ביקור" data-en="Book a Visit" data-ar="احجز زيارة">הזמינו ביקור</a>
       </div>
     </div>
+
     <div class="hero-scroll">
       <span data-he="גלול" data-en="Scroll" data-ar="للأسفل">גלול</span>
       <div class="scroll-line"></div>
@@ -741,11 +745,10 @@
 
   <div class="divider"></div>
 
-  <!-- ABOUT -->
   <section class="about" id="about">
     <div class="about-left reveal">
-      <img src="01113A9B-E953-4302-89FE-9F39932388BB.jpeg" alt="Villa Exterior" class="about-img-main" />
-      <img src="740E6D17-8D8B-47A9-BD52-54FEFD845375.jpeg" alt="Pool Side" class="about-img-accent" />
+      <img src="IMG_9037.jpeg" alt="Villa Main" class="about-img-main" />
+      <img src="IMG_9038.jpeg" alt="Villa Accent" class="about-img-accent" />
     </div>
     <div class="about-right">
       <div class="section-label reveal" data-he="הסיפור שלנו" data-en="Our Story" data-ar="قصتنا">הסיפור שלנו</div>
@@ -779,46 +782,69 @@
 
   <div class="divider"></div>
 
-  <!-- GALLERY -->
   <section class="gallery" id="gallery">
     <div class="gallery-header reveal">
       <div>
         <div class="section-label" data-he="מסע ויזואלי" data-en="Visual Journey" data-ar="جولة بصرية">מסע ויזואלי</div>
         <h2 data-he="ה<em>גלריה</em>" data-en="The <em>Gallery</em>" data-ar="<em>المعرض</em>">ה<em>גלריה</em></h2>
       </div>
-      <div class="gallery-count" data-he="08 חללים" data-en="08 Spaces" data-ar="٠٨ مساحات">08 חללים</div>
+      <div class="gallery-count" data-he="12 חללים" data-en="12 Spaces" data-ar="١٢ مساحات">12 חללים</div>
     </div>
+
     <div class="gallery-grid reveal">
       <div class="g-item">
-        <img src="70D5D74B-FF18-4A8F-B276-221883B125C8.jpeg" alt="Spa" />
-        <div class="g-overlay"><span class="g-label" data-he="ספא וג'קוזי" data-en="Spa & Jacuzzi" data-ar="السبا والجاكوزي">ספא וג'קוזי</span></div>
+        <img src="IMG_9039.jpeg" alt="Gallery 1" loading="lazy" decoding="async">
+        <div class="g-overlay"><span class="g-label" data-he="תמונה 1" data-en="Image 1" data-ar="صورة 1">תמונה 1</span></div>
       </div>
       <div class="g-item">
-        <img src="0A6A4EF9-B9DD-4799-98EC-199EAAE094FD.jpeg" alt="Dining" />
-        <div class="g-overlay"><span class="g-label" data-he="חדר אוכל" data-en="Dining Area" data-ar="منطقة الطعام">חדר אוכל</span></div>
+        <img src="IMG_9040.jpeg" alt="Gallery 2" loading="lazy" decoding="async">
+        <div class="g-overlay"><span class="g-label" data-he="תמונה 2" data-en="Image 2" data-ar="صورة 2">תמונה 2</span></div>
       </div>
       <div class="g-item">
-        <img src="C1238249-47CF-4AE9-9603-3D03328CBB44.jpeg" alt="Pool" />
-        <div class="g-overlay"><span class="g-label" data-he="בריכה פנימית" data-en="Indoor Pool" data-ar="المسبح الداخلي">בריכה פנימית</span></div>
+        <img src="IMG_9041.jpeg" alt="Gallery 3" loading="lazy" decoding="async">
+        <div class="g-overlay"><span class="g-label" data-he="תמונה 3" data-en="Image 3" data-ar="صورة 3">תמונה 3</span></div>
       </div>
       <div class="g-item">
-        <img src="A387D592-A3CF-470F-8936-46BF37FA4641.jpeg" alt="Swimming Pool" />
-        <div class="g-overlay"><span class="g-label" data-he="בריכת שחייה" data-en="Swimming Pool" data-ar="مسبح السباحة">בריכת שחייה</span></div>
+        <img src="IMG_9042.jpeg" alt="Gallery 4" loading="lazy" decoding="async">
+        <div class="g-overlay"><span class="g-label" data-he="תמונה 4" data-en="Image 4" data-ar="صورة 4">תמונה 4</span></div>
       </div>
       <div class="g-item">
-        <img src="DD5FFD0F-A384-4B9C-80A5-0BB1846EF74B.jpeg" alt="Living Room" />
-        <div class="g-overlay"><span class="g-label" data-he="סלון" data-en="Living Room" data-ar="غرفة المعيشة">סלון</span></div>
+        <img src="IMG_9043.jpeg" alt="Gallery 5" loading="lazy" decoding="async">
+        <div class="g-overlay"><span class="g-label" data-he="תמונה 5" data-en="Image 5" data-ar="صورة 5">תמונה 5</span></div>
       </div>
       <div class="g-item">
-        <img src="10495FAC-3847-4FBF-800D-42BF2287DEAF.jpeg" alt="Pool Side" />
-        <div class="g-overlay"><span class="g-label" data-he="צד הבריכה" data-en="Pool Side" data-ar="جانب المسبح">צד הבריכה</span></div>
+        <img src="IMG_9044.jpeg" alt="Gallery 6" loading="lazy" decoding="async">
+        <div class="g-overlay"><span class="g-label" data-he="תמונה 6" data-en="Image 6" data-ar="صورة 6">תמונה 6</span></div>
+      </div>
+      <div class="g-item">
+        <img src="IMG_9045.jpeg" alt="Gallery 7" loading="lazy" decoding="async">
+        <div class="g-overlay"><span class="g-label" data-he="תמונה 7" data-en="Image 7" data-ar="صورة 7">תמונה 7</span></div>
+      </div>
+      <div class="g-item">
+        <img src="IMG_9046.jpeg" alt="Gallery 8" loading="lazy" decoding="async">
+        <div class="g-overlay"><span class="g-label" data-he="תמונה 8" data-en="Image 8" data-ar="صورة 8">תמונה 8</span></div>
+      </div>
+      <div class="g-item">
+        <img src="IMG_9047.jpeg" alt="Gallery 9" loading="lazy" decoding="async">
+        <div class="g-overlay"><span class="g-label" data-he="תמונה 9" data-en="Image 9" data-ar="صورة 9">תמונה 9</span></div>
+      </div>
+      <div class="g-item">
+        <img src="IMG_9048.jpeg" alt="Gallery 10" loading="lazy" decoding="async">
+        <div class="g-overlay"><span class="g-label" data-he="תמונה 10" data-en="Image 10" data-ar="صورة 10">תמונה 10</span></div>
+      </div>
+      <div class="g-item">
+        <img src="IMG_9049.jpeg" alt="Gallery 11" loading="lazy" decoding="async">
+        <div class="g-overlay"><span class="g-label" data-he="תמונה 11" data-en="Image 11" data-ar="صورة 11">תמונה 11</span></div>
+      </div>
+      <div class="g-item">
+        <img src="IMG_9050.jpeg" alt="Gallery 12" loading="lazy" decoding="async">
+        <div class="g-overlay"><span class="g-label" data-he="תמונה 12" data-en="Image 12" data-ar="صورة 12">תמונה 12</span></div>
       </div>
     </div>
   </section>
 
   <div class="divider"></div>
 
-  <!-- FEATURES -->
   <section class="features" id="features">
     <div class="features-header">
       <div class="section-label reveal" data-he="מה אנחנו מציעים" data-en="What We Offer" data-ar="ما نقدمه">מה אנחנו מציעים</div>
@@ -864,13 +890,11 @@
     </div>
   </section>
 
-  <!-- QUOTE STRIP -->
   <div class="quote-strip reveal">
     <blockquote data-he='"מקלט שבו כל רגע מרגיש כמו סצנה מחלום — יוקרה טהורה, שלווה טהורה."' data-en='"A retreat where every moment feels like a scene from a dream — pure luxury, pure serenity."' data-ar='"ملاذ حيث تبدو كل لحظة كمشهد من حلم — رفاهية خالصة، سكينة خالصة."'>"מקלט שבו כל רגע מרגיש כמו סצנה מחלום — יוקרה טהורה, שלווה טהורה."</blockquote>
-    <cite data-he="— וילה וספא מונה דניאלס" data-en="— Mona Daniels Villa & Spa" data-ar="— فيلا وسبا مونا دانيالز">— וילה וספא מונה דניאלס</cite>
+    <cite data-he="— וילה וספא מונה דניאלס" data-en="— Mona Daniels Villa & Spa" data-ar="— فيلا وسبا مونا دניאלز">— וילה וספא מונה דניאלס</cite>
   </div>
 
-  <!-- CONTACT -->
   <section class="contact" id="contact">
     <div class="contact-left">
       <div class="section-label reveal" data-he="צרו קשר" data-en="Get In Touch" data-ar="تواصل معنا">צרו קשר</div>
@@ -907,13 +931,14 @@
         </div>
       </div>
     </div>
+
     <div class="contact-right reveal reveal-delay-2">
-      <img src="2F7E5609-4C12-441E-8300-12188CA28E4D.jpeg" alt="Villa Interior" class="contact-img" />
-      <img src="CC3AA7A7-10CD-4172-927A-46FD2EBBE453.jpeg" alt="Spa" class="contact-img-accent" />
+      <img src="IMG_9051.jpeg" alt="Villa Interior" class="contact-img" />
+      <img src="IMG_9052.jpeg" alt="Spa Accent" class="contact-img-accent" />
+      <img src="IMG_9053.jpeg" alt="Small Accent" class="contact-img-tiny" />
     </div>
   </section>
 
-  <!-- SOCIAL ROW -->
   <div class="social-row">
     <a href="https://www.instagram.com/mona_daniels_villa?igsh=MXYxMXNpZ3Bvc252MQ==" target="_blank" class="social-link ig-link" title="Instagram">
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -941,17 +966,15 @@
     </a>
   </div>
 
-  <!-- MAP -->
   <div class="map-section">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6660.5!2d35.0527!3d32.7308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151db8c0b0b0b0b1%3A0x0!2sIsfiya!5e0!3m2!1sen!2s!4v1" allowfullscreen="" loading="lazy"></iframe>
     <div class="map-overlay"></div>
     <div class="map-pin">
       <div class="map-pin-dot"></div>
-      <div class="map-pin-label" data-he="וילה מונה דניאלס · עוספיה" data-en="Mona Daniels Villa · Isfiya" data-ar="فيلا مونا دانيالز · عسفيا">וילה מונה דניאלס · עוספיה</div>
+      <div class="map-pin-label" data-he="וילה מונה דניאלס · עוספיה" data-en="Mona Daniels Villa · Isfiya" data-ar="فيلا مونا دניאלס · عسفيا">וילה מונה דניאלס · עוספיה</div>
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer>
     <div class="footer-logo">Mona Daniels</div>
     <div class="footer-copy">&copy; 2025 <span>Mona Daniels Villa &amp; Spa</span>.</div>
@@ -964,39 +987,48 @@
   </footer>
 
   <script>
-    // CURSOR
     const cursor = document.getElementById('cursor');
     const ring = document.getElementById('cursorRing');
-    let mx=0,my=0,rx=0,ry=0;
+    let mx = 0, my = 0, rx = 0, ry = 0;
+
     document.addEventListener('mousemove', e => {
-      mx=e.clientX; my=e.clientY;
-      cursor.style.left=mx+'px'; cursor.style.top=my+'px';
+      mx = e.clientX;
+      my = e.clientY;
+      cursor.style.left = mx + 'px';
+      cursor.style.top = my + 'px';
     });
-    (function animateRing(){
-      rx+=(mx-rx)*0.12; ry+=(my-ry)*0.12;
-      ring.style.left=rx+'px'; ring.style.top=ry+'px';
+
+    (function animateRing() {
+      rx += (mx - rx) * 0.12;
+      ry += (my - ry) * 0.12;
+      ring.style.left = rx + 'px';
+      ring.style.top = ry + 'px';
       requestAnimationFrame(animateRing);
     })();
-    document.querySelectorAll('a,button,.g-item').forEach(el=>{
-      el.addEventListener('mouseenter',()=>ring.classList.add('expand'));
-      el.addEventListener('mouseleave',()=>ring.classList.remove('expand'));
+
+    document.querySelectorAll('a,button,.g-item').forEach(el => {
+      el.addEventListener('mouseenter', () => ring.classList.add('expand'));
+      el.addEventListener('mouseleave', () => ring.classList.remove('expand'));
     });
 
-    // NAV SCROLL
     const nav = document.getElementById('nav');
-    window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60));
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60));
 
-    // SCROLL REVEAL
-    const observer = new IntersectionObserver(entries=>{
-      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); }});
-    },{threshold:0.1});
-    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
 
-    // LANGUAGE
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
     const translations = {
-      he: { dir:'rtl', lang:'he', font:"'Frank Ruhl Libre', 'Montserrat', serif" },
-      en: { dir:'ltr', lang:'en', font:"'Montserrat', sans-serif" },
-      ar: { dir:'rtl', lang:'ar', font:"'Tajawal', sans-serif" }
+      he: { dir: 'rtl', lang: 'he', font: "'Frank Ruhl Libre', 'Montserrat', serif" },
+      en: { dir: 'ltr', lang: 'en', font: "'Montserrat', sans-serif" },
+      ar: { dir: 'rtl', lang: 'ar', font: "'Tajawal', sans-serif" }
     };
 
     function setLang(lang) {
@@ -1006,15 +1038,13 @@
       document.body.className = 'lang-' + lang;
       document.body.style.fontFamily = t.font;
 
-      // Update active button
       document.querySelectorAll('.lang-btn').forEach(b => {
         b.classList.toggle('active', b.getAttribute('onclick').includes("'" + lang + "'"));
       });
 
-      // Update all data-[lang] elements
-      document.querySelectorAll('[data-'+lang+']').forEach(el => {
-        const val = el.getAttribute('data-'+lang);
-        if(el.tagName==='INPUT'||el.tagName==='TEXTAREA') {
+      document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+        const val = el.getAttribute('data-' + lang);
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
           el.placeholder = val;
         } else {
           el.innerHTML = val;
@@ -1024,7 +1054,6 @@
       localStorage.setItem('villa-lang', lang);
     }
 
-    // Load saved language or default to Hebrew
     const saved = localStorage.getItem('villa-lang') || 'he';
     setLang(saved);
   </script>
