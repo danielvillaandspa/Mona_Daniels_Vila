@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mona Daniels Villa</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: #0a0a0a;
+      color: #fff;
+    }
+
+    /* NAVIGATION */
+    nav {
+      position: fixed;
+      top: 0; width: 100%;
+      background: rgba(0,0,0,0.85);
+      padding: 18px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 999;
+      border-bottom: 1px solid #c9a84c;
+    }
+
+    nav .logo {
+      font-size: 22px;
+      color: #c9a84c;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 1px;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover { color: #c9a84c; }
+
+    /* HERO */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(135deg, #1a0a00, #2c1a0e, #0a0a0a);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 60px;
+      color: #c9a84c;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #ccc;
+      max-width: 600px;
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      padding: 14px 40px;
+      background: #c9a84c;
+      color: #000;
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: background 0.3s;
+    }
+
+    .btn:hover { background: #e0c070; }
+
+    /* ABOUT */
+    .about {
+      padding: 100px 60px;
+      display: flex;
+      gap: 60px;
+      align-items: center;
+      background: #111;
+    }
+
+    .about-text h2 {
+      font-size: 36px;
+      color: #c9a84c;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      color: #bbb;
+      line-height: 1.9;
+      font-size: 16px;
+    }
+
+    /* GALLERY */
+    .gallery {
+      padding: 100px 60px;
+      background: #0a0a0a;
+      text-align: center;
+    }
+
+    .gallery h2 {
+      font-size: 36px;
+      color: #c9a84c;
+      margin-bottom: 50px;
+      letter-spacing: 3px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .gallery-item {
+      background: #1a1a1a;
+      height: 250px;
+      border: 1px solid #c9a84c33;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #555;
+      font-size: 14px;
+      border-radius: 4px;
+      transition: border 0.3s;
+    }
+
+    .gallery-item:hover { border-color: #c9a84c; }
+
+    /* FEATURES */
+    .features {
+      padding: 100px 60px;
+      background: #111;
+      text-align: center;
+    }
+
+    .features h2 {
+      font-size: 36px;
+      color: #c9a84c;
+      margin-bottom: 50px;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .feature-card {
+      background: #1a1a1a;
+      padding: 40px 30px;
+      border: 1px solid #c9a84c33;
+      border-radius: 4px;
+      transition: transform 0.3s;
+    }
+
+    .feature-card:hover { transform: translateY(-5px); }
+
+    .feature-card .icon {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .feature-card h3 {
+      color: #c9a84c;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .feature-card p { color: #999; font-size: 14px; line-height: 1.7; }
+
+    /* CONTACT */
+    .contact {
+      padding: 100px 60px;
+      background: #0a0a0a;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 36px;
+      color: #c9a84c;
+      margin-bottom: 20px;
+    }
+
+    .contact p { color: #bbb; margin-bottom: 40px; }
+
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      flex-wrap: wrap;
+    }
+
+    .contact-info div {
+      font-size: 16px;
+      color: #ccc;
+    }
+
+    .contact-info span {
+      display: block;
+      color: #c9a84c;
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 30px;
+      color: #555;
+      font-size: 13px;
+      border-top: 1px solid #c9a84c33;
+    }
+
+    footer span { color: #c9a84c; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 32px; }
+      .gallery-grid,
+      .features-grid { grid-template-columns: 1fr; }
+      .about { flex-direction: column; padding: 60px 30px; }
+      nav ul { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">Mona Daniels Villa</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Mona Daniels Villa</h1>
+    <p>Experience the pinnacle of luxury living. A place where elegance meets comfort in every detail.</p>
+    <a href="#about" class="btn">Discover More</a>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-text">
+      <h2>About The Villa</h2>
+      <p>Mona Daniels Villa is a masterpiece of architectural design, offering an unparalleled living experience. Nestled in a prime location, the villa combines timeless elegance with modern sophistication. Every corner has been meticulously crafted to create spaces that inspire and delight.</p>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">📷 Add Your Photo</div>
+      <div class="gallery-item">📷 Add Your Photo</div>
+      <div class="gallery-item">📷 Add Your Photo</div>
+      <div class="gallery-item">📷 Add Your Photo</div>
+      <div class="gallery-item">📷 Add Your Photo</div>
+      <div class="gallery-item">📷 Add Your Photo</div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="features">
+    <h2>Villa Features</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="icon">🏊</div>
+        <h3>Private Pool</h3>
+        <p>A stunning infinity pool with breathtaking views and premium facilities.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🌿</div>
+        <h3>Lush Gardens</h3>
+        <p>Beautifully landscaped gardens that offer tranquility and natural beauty.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🛏️</div>
+        <h3>Luxury Rooms</h3>
+        <p>Spacious, elegantly designed rooms with premium furnishings and amenities.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🍽️</div>
+        <h3>Fine Dining</h3>
+        <p>A gourmet kitchen and dining area perfect for entertaining guests.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🔒</div>
+        <h3>24/7 Security</h3>
+        <p>State-of-the-art security systems ensuring your complete peace of mind.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🚗</div>
+        <h3>Private Garage</h3>
+        <p>Spacious garage accommodating multiple luxury vehicles with ease.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <h2>Get In Touch</h2>
+    <p>We would love to hear from you. Reach out to us for more information.</p>
+    <div class="contact-info">
+      <div><span>Phone</span>+1 000 000 0000</div>
+      <div><span>Email</span>info@monadanielsvilla.com</div>
+      <div><span>Location</span>Your City, Country</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 <span>Mona Daniels Villa</span>. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
