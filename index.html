@@ -1,835 +1,579 @@
 <!DOCTYPE html>
+
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>דניאל'ס וילה & ספא</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Frank+Ruhl+Libre:wght@300;400;500&family=Tajawal:wght@200;300;400;500&display=swap" rel="stylesheet">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Daniel's Villa &amp; Spa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Frank+Ruhl+Libre:wght@300;400;500&family=Tajawal:wght@200;300;400;500&family=Montserrat:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#b8935a;--gl:#d4af7a;--gp:#e8d5b0;--bg:#0b0b0b;--bg2:#111;--bg3:#161616;--bg4:#1c1c1c;--text:#ece6dc;--muted:#a29a8d}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Frank Ruhl Libre',serif;background:var(--bg);color:var(--text);overflow-x:hidden;direction:rtl}
+body.lang-en{font-family:'Montserrat',sans-serif;direction:ltr}
+body.lang-ar{font-family:'Tajawal',sans-serif;direction:rtl}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;opacity:.4;z-index:9990}
 
-  <style>
-    :root{
-      --gold:#b8935a;
-      --gold-light:#d4af7a;
-      --bg:#0b0b0b;
-      --bg-2:#121212;
-      --bg-3:#171717;
-      --text:#ece6dc;
-      --muted:#a29a8d;
-    }
+/* LANG */
+.lsw{position:fixed;top:18px;left:18px;z-index:2000;display:flex;gap:4px;background:rgba(11,11,11,.92);backdrop-filter:blur(14px);border:1px solid rgba(184,147,90,.2);padding:4px 8px;border-radius:26px}
+body.lang-en .lsw{left:auto;right:18px}
+.lbtn{background:none;border:none;color:var(–muted);font-size:11px;letter-spacing:1px;padding:5px 10px;border-radius:18px;cursor:pointer;transition:.3s;font-family:inherit}
+.lbtn.active{background:var(–gold);color:var(–bg);font-weight:500}
+.lbtn:hover:not(.active){color:var(–gl)}
 
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{
-      font-family:'Frank Ruhl Libre',serif;
-      background:var(--bg);
-      color:var(--text);
-      overflow-x:hidden;
-      direction:rtl;
-    }
+/* WHATSAPP */
+.wa{position:fixed;bottom:22px;right:22px;z-index:3000;display:flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:11px 16px 11px 13px;border-radius:50px;text-decoration:none;box-shadow:0 6px 24px rgba(37,211,102,.35);transition:.3s;animation:wap 3s ease-in-out infinite}
+.wa:hover{transform:translateY(-3px) scale(1.03);animation:none;box-shadow:0 12px 34px rgba(37,211,102,.45)}
+@keyframes wap{0%,100%{box-shadow:0 6px 24px rgba(37,211,102,.35)}50%{box-shadow:0 6px 34px rgba(37,211,102,.55)}}
+.wa svg{width:22px;height:22px;flex-shrink:0}
+.wa-t{font-size:11px;font-weight:500;white-space:nowrap}
 
-    body::before{
-      content:'';
-      position:fixed;
-      inset:0;
-      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-      pointer-events:none;
-      opacity:.35;
-      z-index:9998;
-    }
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;padding:20px 60px;display:flex;justify-content:space-between;align-items:center;z-index:1000;background:rgba(11,11,11,.15);backdrop-filter:blur(12px);border-bottom:1px solid rgba(184,147,90,.08);transition:.4s}
+nav.sc{background:rgba(11,11,11,.95);padding:13px 60px;border-bottom-color:rgba(184,147,90,.15)}
+.nl{text-decoration:none;display:flex;flex-direction:column;gap:2px}
+.nlm{font-family:‘Cormorant Garamond’,serif;font-size:19px;letter-spacing:4px;text-transform:uppercase;color:var(–gl);font-weight:400}
+.nls{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(–muted)}
+nav ul{list-style:none;display:flex;gap:28px;align-items:center}
+nav ul a{color:var(–muted);text-decoration:none;font-size:10px;letter-spacing:2px;text-transform:uppercase;transition:.3s;position:relative}
+nav ul a::after{content:’’;position:absolute;bottom:-3px;right:0;width:0;height:1px;background:var(–gold);transition:.3s}
+body.lang-en nav ul a::after{right:auto;left:0}
+nav ul a:hover{color:var(–gl)}
+nav ul a:hover::after{width:100%}
+.ncta{padding:8px 18px!important;border:1px solid var(–gold)!important;color:var(–gold)!important;border-radius:1px}
+.ncta:hover{background:var(–gold)!important;color:var(–bg)!important}
+.ncta::after{display:none!important}
 
-    .cursor,.cursor-ring{display:none}
+/* HERO */
+.hero{height:100vh;position:relative;display:flex;align-items:flex-end;padding:0 60px 80px;overflow:hidden}
+.hbg{position:absolute;inset:0;background:linear-gradient(155deg,#17100a,#0b0b0b 45%,#091015);z-index:0}
+.hslides{position:absolute;inset:0;z-index:1}
+.hs{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 1.5s;transform:scale(1.05)}
+.hs.on{opacity:.2;animation:hz 20s ease-in-out infinite alternate}
+@keyframes hz{from{transform:scale(1.05)}to{transform:scale(1.12)}}
+.hov{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,11,11,.97) 0%,rgba(11,11,11,.28) 52%,rgba(11,11,11,.5) 100%);z-index:2}
+.hc{position:relative;z-index:3;max-width:740px}
+.heye{display:flex;align-items:center;gap:12px;margin-bottom:16px;color:var(–gold);font-size:10px;letter-spacing:5px;text-transform:uppercase}
+.heye::before{content:’’;width:32px;height:1px;background:var(–gold);flex-shrink:0}
+.hero h1{font-family:‘Cormorant Garamond’,‘Frank Ruhl Libre’,serif;font-size:clamp(44px,7vw,84px);font-weight:300;line-height:1.05;color:#fff;margin-bottom:14px}
+.hero h1 em{font-style:italic;color:var(–gl)}
+.hdesc{max-width:540px;font-size:14px;line-height:2.05;color:var(–muted);margin-bottom:34px}
+.hbtns{display:flex;gap:14px;flex-wrap:wrap}
+.bp{padding:13px 36px;background:var(–gold);color:var(–bg);text-decoration:none;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:500;transition:.3s}
+.bp:hover{background:var(–gl);transform:translateY(-2px)}
+.bg{padding:13px 36px;border:1px solid rgba(184,147,90,.38);color:var(–gp);text-decoration:none;font-size:10px;letter-spacing:2px;text-transform:uppercase;transition:.3s}
+.bg:hover{border-color:var(–gold);color:var(–gl)}
 
-    nav{
-      position:fixed;
-      top:0;left:0;right:0;
-      padding:22px 60px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      z-index:1000;
-      background:rgba(11,11,11,.25);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid rgba(184,147,90,.12);
-    }
+/* DIVIDER */
+.dv{height:1px;background:linear-gradient(to right,transparent,var(–gold),transparent);opacity:.2}
 
-    .nav-logo{
-      text-decoration:none;
-      display:flex;
-      flex-direction:column;
-      gap:4px;
-    }
-    .nav-logo-main{
-      font-family:'Cormorant Garamond',serif;
-      font-size:22px;
-      letter-spacing:4px;
-      text-transform:uppercase;
-      color:var(--gold-light);
-      font-weight:400;
-    }
-    .nav-logo-sub{
-      font-size:10px;
-      letter-spacing:4px;
-      text-transform:uppercase;
-      color:var(--muted);
-    }
+/* SECTION LABEL */
+.sl{display:flex;align-items:center;gap:12px;color:var(–gold);font-size:9px;letter-spacing:5px;text-transform:uppercase;margin-bottom:14px}
+.sl::before{content:’’;width:24px;height:1px;background:var(–gold);flex-shrink:0}
 
-    nav ul{
-      list-style:none;
-      display:flex;
-      gap:32px;
-      align-items:center;
-    }
-    nav a{
-      color:var(--muted);
-      text-decoration:none;
-      font-size:11px;
-      letter-spacing:2px;
-      text-transform:uppercase;
-    }
-    nav a:hover{color:var(--gold-light)}
+/* SECTIONS */
+.sec{padding:110px 60px}
+.dk{background:var(–bg2)}
+.md{background:var(–bg)}
 
-    .hero{
-      height:100vh;
-      position:relative;
-      display:flex;
-      align-items:flex-end;
-      padding:0 60px 82px;
-      overflow:hidden;
-    }
-    .hero-bg{
-      position:absolute;
-      inset:0;
-      background:linear-gradient(160deg,#17100a 0%, #0b0b0b 45%, #091015 100%);
-      z-index:0;
-    }
-    .hero-img{
-      position:absolute;
-      inset:0;
-      background:url('IMG_9036.jpeg') center/cover no-repeat;
-      opacity:.22;
-      transform:scale(1.05);
-      z-index:1;
-    }
-    .hero-overlay{
-      position:absolute;
-      inset:0;
-      background:linear-gradient(to top, rgba(11,11,11,.96) 0%, rgba(11,11,11,.35) 50%, rgba(11,11,11,.6) 100%);
-      z-index:2;
-    }
-    .hero-content{
-      position:relative;
-      z-index:3;
-      max-width:760px;
-    }
-    .hero-eyebrow{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      margin-bottom:18px;
-      color:var(--gold);
-      font-size:10px;
-      letter-spacing:5px;
-      text-transform:uppercase;
-    }
-    .hero-eyebrow::before{
-      content:'';
-      width:36px;
-      height:1px;
-      background:var(--gold);
-      flex-shrink:0;
-    }
-    .hero h1{
-      font-family:'Cormorant Garamond',serif;
-      font-size:clamp(48px,7vw,88px);
-      font-weight:300;
-      line-height:1.05;
-      color:#fff;
-      margin-bottom:18px;
-    }
-    .hero-desc{
-      max-width:560px;
-      font-size:14px;
-      line-height:2.05;
-      color:var(--muted);
-    }
+/* ABOUT */
+.ag{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.aleft{position:relative;min-height:500px}
+.aim{width:100%;height:490px;object-fit:cover;display:block}
+.aima{position:absolute;width:46%;height:220px;object-fit:cover;right:-20px;bottom:-22px;border:4px solid var(–bg2);box-shadow:0 16px 36px rgba(0,0,0,.5)}
+body.lang-en .aima{right:-20px;left:auto}
+.aright h2{font-family:‘Cormorant Garamond’,‘Frank Ruhl Libre’,serif;font-size:clamp(32px,4vw,54px);font-weight:300;line-height:1.15;margin-bottom:18px;color:#fff}
+.aright h2 em{font-style:italic;color:var(–gl)}
+.aright p{color:var(–muted);font-size:14px;line-height:2.1;margin-bottom:13px}
+.afeats{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:32px}
+.afeat{padding:15px;background:rgba(255,255,255,.02);border-right:2px solid rgba(184,147,90,.2);transition:.3s}
+body.lang-en .afeat{border-right:none;border-left:2px solid rgba(184,147,90,.2)}
+.afeat:hover{border-color:var(–gold)}
+.afeat h4{color:var(–gl);font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px}
+.afeat p{margin:0;font-size:12px;line-height:1.7;color:var(–muted)}
 
-    .section{
-      padding:130px 60px;
-    }
-    .section.dark{background:var(--bg-2)}
-    .section.mid{background:var(--bg)}
-    .divider{
-      height:1px;
-      background:linear-gradient(to right, transparent, var(--gold), transparent);
-      opacity:.24;
-    }
+/* POOL SECTION */
+.pool-sec h2{font-family:‘Cormorant Garamond’,‘Frank Ruhl Libre’,serif;font-size:clamp(32px,4vw,54px);font-weight:300;color:#fff;margin-bottom:14px;line-height:1.15}
+.pool-sec h2 em{font-style:italic;color:var(–gl)}
+.pool-sec>p{color:var(–muted);font-size:14px;line-height:2;margin-bottom:44px;max-width:600px}
+.pool-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:8px}
+.pool-grid-2{display:grid;grid-template-columns:2fr 1fr 1fr;gap:8px}
+.pg-item{position:relative;overflow:hidden;cursor:zoom-in}
+.pg-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease}
+.pg-item:hover img{transform:scale(1.06)}
+.pg-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7) 0%,transparent 55%);opacity:0;transition:.35s;display:flex;align-items:flex-end;padding:14px}
+.pg-item:hover .pg-ov{opacity:1}
+.pglbl{color:var(–gp);font-size:9px;letter-spacing:3px;text-transform:uppercase}
 
-    .section-label{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      color:var(--gold);
-      font-size:9px;
-      letter-spacing:5px;
-      text-transform:uppercase;
-      margin-bottom:18px;
-    }
-    .section-label::before{
-      content:'';
-      width:28px;
-      height:1px;
-      background:var(--gold);
-      flex-shrink:0;
-    }
+/* ROOMS SECTION */
+.rooms-sec h2{font-family:‘Cormorant Garamond’,‘Frank Ruhl Libre’,serif;font-size:clamp(32px,4vw,54px);font-weight:300;color:#fff;margin-bottom:14px;line-height:1.15}
+.rooms-sec h2 em{font-style:italic;color:var(–gl)}
+.rooms-sec>p{color:var(–muted);font-size:14px;line-height:2;margin-bottom:44px;max-width:600px}
+.rooms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.room-card{position:relative;overflow:hidden;cursor:zoom-in}
+.room-card img{width:100%;height:300px;object-fit:cover;display:block;transition:transform .7s ease}
+.room-card:hover img{transform:scale(1.06)}
+.room-ov{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,.82) 0%,transparent 100%);padding:18px 16px 16px;transform:translateY(8px);opacity:0;transition:.4s}
+.room-card:hover .room-ov{opacity:1;transform:translateY(0)}
+.rtitle{font-family:‘Cormorant Garamond’,‘Frank Ruhl Libre’,serif;font-size:16px;color:#fff;margin-bottom:3px}
+.rsub{font-size:9px;letter-spacing:2px;color:var(–gl);text-transform:uppercase}
 
-    .about{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:80px;
-      align-items:center;
-    }
-    .about-left{
-      position:relative;
-      min-height:540px;
-    }
-    .about-img-main{
-      width:100%;
-      height:520px;
-      object-fit:cover;
-      display:block;
-    }
-    .about-img-accent{
-      position:absolute;
-      width:48%;
-      height:240px;
-      object-fit:cover;
-      right:-24px;
-      bottom:-26px;
-      border:4px solid var(--bg-2);
-      box-shadow:0 18px 40px rgba(0,0,0,.5);
-    }
-    .about-right h2{
-      font-family:'Cormorant Garamond',serif;
-      font-size:clamp(36px,4vw,58px);
-      font-weight:300;
-      line-height:1.15;
-      margin-bottom:22px;
-      color:#fff;
-    }
-    .about-right p{
-      color:var(--muted);
-      font-size:14px;
-      line-height:2.15;
-      margin-bottom:16px;
-    }
+/* GALLERY */
+.gal-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px}
+.gal-head h2{font-family:‘Cormorant Garamond’,‘Frank Ruhl Libre’,serif;font-size:clamp(32px,4vw,54px);font-weight:300;color:#fff}
+.gal-head h2 em{font-style:italic;color:var(–gl)}
+.gcnt{color:var(–muted);font-size:10px;letter-spacing:3px;text-transform:uppercase}
+.ggrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.gi{position:relative;overflow:hidden;aspect-ratio:4/3;cursor:zoom-in}
+.gi img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .65s ease}
+.gi:hover img{transform:scale(1.06)}
+.gov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.72) 0%,transparent 55%);opacity:0;transition:.32s;display:flex;align-items:flex-end;padding:13px}
+.gi:hover .gov{opacity:1}
+.glbl{color:var(–gp);font-size:9px;letter-spacing:3px;text-transform:uppercase}
 
-    .features-header h2,
-    .gallery-header h2,
-    .contact-left h2{
-      font-family:'Cormorant Garamond',serif;
-      font-size:clamp(36px,4vw,58px);
-      font-weight:300;
-      color:#fff;
-      line-height:1.15;
-    }
+/* FEATURES */
+.fh h2{font-family:‘Cormorant Garamond’,‘Frank Ruhl Libre’,serif;font-size:clamp(32px,4vw,54px);font-weight:300;color:#fff;line-height:1.15;margin-bottom:48px}
+.fh h2 em{font-style:italic;color:var(–gl)}
+.fgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.fc{background:var(–bg3);padding:42px 34px;position:relative;overflow:hidden;transition:.4s}
+.fc::before{content:’’;position:absolute;top:0;right:0;width:100%;height:2px;background:linear-gradient(to left,var(–gold),transparent);transform:scaleX(0);transform-origin:right;transition:.4s}
+body.lang-en .fc::before{transform-origin:left;background:linear-gradient(to right,var(–gold),transparent)}
+.fc:hover{background:var(–bg4)}
+.fc:hover::before{transform:scaleX(1)}
+.fnum{font-family:‘Cormorant Garamond’,serif;font-size:50px;font-weight:300;color:rgba(184,147,90,.1);line-height:1;margin-bottom:14px;transition:.4s}
+.fc:hover .fnum{color:rgba(184,147,90,.22)}
+.ficon{font-size:24px;margin-bottom:14px}
+.fc h3{font-family:‘Cormorant Garamond’,‘Frank Ruhl Libre’,serif;font-size:20px;font-weight:400;color:var(–gl);margin-bottom:10px}
+.fc p{font-size:12px;line-height:1.9;color:var(–muted)}
 
-    .about-feats{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:18px;
-      margin-top:38px;
-    }
-    .about-feat{
-      padding:18px;
-      background:rgba(255,255,255,.02);
-      border-right:2px solid rgba(184,147,90,.24);
-    }
-    .about-feat h4{
-      color:var(--gold-light);
-      font-size:11px;
-      letter-spacing:2px;
-      text-transform:uppercase;
-      margin-bottom:6px;
-    }
-    .about-feat p{
-      margin:0;
-      font-size:12px;
-      line-height:1.75;
-      color:var(--muted);
-    }
+/* QUOTE */
+.quote{background:var(–gold);color:#161616;text-align:center;padding:70px 60px;position:relative;overflow:hidden}
+.quote::before{content:’”’;font-family:‘Cormorant Garamond’,serif;font-size:340px;color:rgba(0,0,0,.06);position:absolute;top:-50px;left:50%;transform:translateX(-50%);line-height:1;pointer-events:none}
+.quote blockquote{font-family:‘Cormorant Garamond’,‘Frank Ruhl Libre’,serif;font-size:clamp(20px,3vw,32px);font-style:italic;font-weight:300;max-width:820px;margin:0 auto 14px;line-height:1.6;position:relative}
+.quote cite{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:rgba(22,22,22,.45)}
 
-    .gallery-header{
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-end;
-      margin-bottom:44px;
-      gap:18px;
-    }
-    .gallery-count{
-      color:var(--muted);
-      font-size:10px;
-      letter-spacing:3px;
-      text-transform:uppercase;
-      white-space:nowrap;
-    }
-    .gallery-grid{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:10px;
-    }
-    .g-item{
-      position:relative;
-      overflow:hidden;
-      aspect-ratio:4/3;
-      background:#111;
-    }
-    .g-item img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-      transition:transform .7s ease;
-    }
-    .g-item:hover img{transform:scale(1.06)}
-    .g-overlay{
-      position:absolute;
-      inset:0;
-      display:flex;
-      align-items:flex-end;
-      padding:16px;
-      background:linear-gradient(to top, rgba(0,0,0,.72) 0%, transparent 58%);
-      opacity:0;
-      transition:opacity .35s ease;
-    }
-    .g-item:hover .g-overlay{opacity:1}
-    .g-label{
-      color:var(--gold-light);
-      font-size:10px;
-      letter-spacing:3px;
-      text-transform:uppercase;
-    }
+/* CONTACT */
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.cleft h2{font-family:‘Cormorant Garamond’,‘Frank Ruhl Libre’,serif;font-size:clamp(32px,4vw,54px);font-weight:300;color:#fff;line-height:1.15;margin-bottom:16px}
+.cleft h2 em{font-style:italic;color:var(–gl)}
+.cleft>p{color:var(–muted);font-size:14px;line-height:2;margin-bottom:36px}
+.citems{display:flex;flex-direction:column}
+.ci{display:flex;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid rgba(184,147,90,.1);text-decoration:none;color:inherit;transition:.3s}
+.ci:hover{padding-right:8px}
+body.lang-en .ci:hover{padding-right:0;padding-left:8px}
+.cico{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(184,147,90,.28);flex-shrink:0;transition:.3s;font-size:15px}
+.ci:hover .cico{background:var(–gold);border-color:var(–gold)}
+.clbl{display:block;color:var(–gold);font-size:9px;letter-spacing:3px;text-transform:uppercase;margin-bottom:3px}
+.cval{color:var(–text);font-size:13px}
+.cright{position:relative;min-height:520px}
+.cimg{width:100%;height:500px;object-fit:cover;display:block}
+.cimga{position:absolute;width:50%;height:200px;object-fit:cover;left:-22px;bottom:-22px;border:4px solid var(–bg);box-shadow:0 16px 36px rgba(0,0,0,.5)}
+body.lang-en .cimga{left:-22px;right:auto}
 
-    .features-grid{
-      margin-top:48px;
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:2px;
-    }
-    .feature-card{
-      background:var(--bg-3);
-      padding:42px 34px;
-      min-height:250px;
-    }
-    .feature-num{
-      font-family:'Cormorant Garamond',serif;
-      font-size:54px;
-      line-height:1;
-      color:rgba(184,147,90,.12);
-      margin-bottom:14px;
-    }
-    .feature-icon{
-      font-size:26px;
-      margin-bottom:14px;
-    }
-    .feature-card h3{
-      color:var(--gold-light);
-      font-size:20px;
-      font-weight:400;
-      margin-bottom:10px;
-    }
-    .feature-card p{
-      color:var(--muted);
-      font-size:12px;
-      line-height:1.9;
-    }
+/* SOCIAL */
+.socrow{display:flex;justify-content:center;gap:12px;padding:40px 60px 0;background:var(–bg)}
+.socl{width:44px;height:44px;border:1px solid rgba(184,147,90,.26);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(–muted);transition:.28s}
+.socl:hover{background:var(–gold);border-color:var(–gold);color:var(–bg);transform:translateY(-3px)}
+.ig-l{font-size:0}
+.ig-l svg{width:18px;height:18px}
 
-    .quote-strip{
-      background:var(--gold);
-      color:#161616;
-      text-align:center;
-      padding:74px 60px;
-    }
-    .quote-strip blockquote{
-      font-family:'Cormorant Garamond',serif;
-      font-size:clamp(22px,3vw,34px);
-      font-style:italic;
-      font-weight:300;
-      max-width:860px;
-      margin:0 auto 14px;
-      line-height:1.6;
-    }
-    .quote-strip cite{
-      font-size:10px;
-      letter-spacing:4px;
-      text-transform:uppercase;
-      color:rgba(22,22,22,.55);
-    }
+/* MAP */
+.mapsec{height:340px;background:var(–bg3);position:relative;overflow:hidden;margin-top:40px}
+.mapsec iframe{width:100%;height:100%;border:0;filter:grayscale(100%) invert(90%) contrast(80%);opacity:.5}
+.mapov{position:absolute;inset:0;background:linear-gradient(to right,var(–bg) 0%,transparent 22%,transparent 78%,var(–bg) 100%);pointer-events:none}
+.mappin{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none}
+.mapdot{width:12px;height:12px;background:var(–gold);border-radius:50%;margin:0 auto 7px;animation:pp 2s ease-in-out infinite}
+@keyframes pp{0%,100%{box-shadow:0 0 0 4px rgba(184,147,90,.18),0 0 0 8px rgba(184,147,90,.07)}50%{box-shadow:0 0 0 8px rgba(184,147,90,.18),0 0 0 16px rgba(184,147,90,.04)}}
+.maplbl{color:var(–gl);font-size:10px;letter-spacing:3px;text-transform:uppercase;white-space:nowrap}
 
-    .contact{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:80px;
-      align-items:center;
-    }
-    .contact-left > p{
-      color:var(--muted);
-      font-size:14px;
-      line-height:2;
-      margin:18px 0 32px;
-    }
-    .contact-items{
-      display:flex;
-      flex-direction:column;
-      gap:0;
-    }
-    .contact-item{
-      display:flex;
-      align-items:center;
-      gap:18px;
-      padding:20px 0;
-      border-bottom:1px solid rgba(184,147,90,.12);
-      text-decoration:none;
-      color:inherit;
-    }
-    .contact-item-icon{
-      width:42px;
-      height:42px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      border:1px solid rgba(184,147,90,.3);
-      flex-shrink:0;
-    }
-    .contact-item-label{
-      display:block;
-      color:var(--gold);
-      font-size:9px;
-      letter-spacing:3px;
-      text-transform:uppercase;
-      margin-bottom:4px;
-    }
-    .contact-item-value{
-      color:var(--text);
-      font-size:13px;
-    }
+/* FOOTER */
+footer{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:44px 60px;background:#000;border-top:1px solid rgba(184,147,90,.13)}
+.flogo{font-family:‘Cormorant Garamond’,serif;font-size:20px;letter-spacing:4px;color:var(–gl);text-transform:uppercase}
+.fcopy{color:var(–muted);font-size:11px}
+.fcopy span{color:var(–gold)}
+.flinks{display:flex;gap:22px;flex-wrap:wrap}
+.flinks a{color:var(–muted);text-decoration:none;font-size:10px;letter-spacing:2px;text-transform:uppercase;transition:.3s}
+.flinks a:hover{color:var(–gold)}
 
-    .contact-right{
-      position:relative;
-      min-height:560px;
-    }
-    .contact-img{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:540px;
-      object-fit:cover;
-    }
-    .contact-img-accent{
-      position:absolute;
-      left:-26px;
-      bottom:-28px;
-      width:56%;
-      height:210px;
-      object-fit:cover;
-      border:4px solid var(--bg);
-      box-shadow:0 18px 40px rgba(0,0,0,.45);
-    }
-    .contact-img-tiny{
-      position:absolute;
-      right:-20px;
-      top:-24px;
-      width:38%;
-      height:160px;
-      object-fit:cover;
-      border:4px solid var(--bg);
-      box-shadow:0 18px 40px rgba(0,0,0,.45);
-    }
+/* LIGHTBOX */
+.lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:9999;align-items:center;justify-content:center}
+.lb.open{display:flex}
+.lb img{max-width:90vw;max-height:88vh;object-fit:contain;border:1px solid rgba(184,147,90,.15)}
+.lbx{position:absolute;top:18px;right:24px;background:none;border:none;color:var(–gl);font-size:30px;cursor:pointer;z-index:10000;line-height:1}
+.lbp,.lbn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(184,147,90,.14);border:1px solid rgba(184,147,90,.28);color:var(–gl);font-size:22px;padding:13px 17px;cursor:pointer;transition:.3s;z-index:10000}
+.lbp{left:18px}
+.lbn{right:18px}
+.lbp:hover,.lbn:hover{background:rgba(184,147,90,.28)}
+.lbcnt{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);font-size:10px;letter-spacing:3px;color:var(–muted);text-transform:uppercase}
 
-    .social-row{
-      display:flex;
-      justify-content:center;
-      gap:14px;
-      padding:42px 60px 0;
-      background:var(--bg);
-    }
-    .social-link{
-      width:46px;height:46px;
-      border:1px solid rgba(184,147,90,.3);
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-decoration:none;
-      color:var(--muted);
-      transition:.25s ease;
-    }
-    .social-link:hover{
-      background:var(--gold);
-      border-color:var(--gold);
-      color:#111;
-    }
+/* REVEAL */
+.rev{opacity:0;transform:translateY(30px);transition:opacity .75s ease,transform .75s ease}
+.rev.vis{opacity:1;transform:translateY(0)}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}.rd4{transition-delay:.4s}
 
-    .map-section{
-      margin-top:46px;
-      height:380px;
-      position:relative;
-      background:var(--bg-3);
-      overflow:hidden;
-    }
-    .map-section iframe{
-      width:100%;
-      height:100%;
-      border:0;
-      filter:grayscale(100%) invert(90%) contrast(80%);
-      opacity:.55;
-    }
-    .map-overlay{
-      position:absolute;
-      inset:0;
-      background:linear-gradient(to right, var(--bg) 0%, transparent 25%, transparent 75%, var(--bg) 100%);
-      pointer-events:none;
-    }
-    .map-pin{
-      position:absolute;
-      top:50%;
-      left:50%;
-      transform:translate(-50%,-50%);
-      pointer-events:none;
-      text-align:center;
-    }
-    .map-pin-dot{
-      width:13px;height:13px;
-      border-radius:50%;
-      background:var(--gold);
-      margin:0 auto 8px;
-    }
-    .map-pin-label{
-      color:var(--gold-light);
-      font-size:10px;
-      letter-spacing:3px;
-      text-transform:uppercase;
-      white-space:nowrap;
-    }
+/* MOBILE */
+@media(max-width:960px){
+nav{padding:15px 18px}
+nav.sc{padding:11px 18px}
+nav ul{display:none}
+.lsw{top:14px;left:14px}
+body.lang-en .lsw{left:auto;right:14px}
+.hero{padding:0 18px 58px}
+.sec{padding:76px 18px}
+.ag,.cg{grid-template-columns:1fr;gap:44px}
+.aima,.cimga{display:none}
+.pool-grid{grid-template-columns:1fr 1fr}
+.pool-grid-2{grid-template-columns:1fr 1fr}
+.rooms-grid{grid-template-columns:1fr 1fr}
+.ggrid{grid-template-columns:1fr 1fr}
+.fgrid{grid-template-columns:1fr}
+footer{flex-direction:column;text-align:center;padding:34px 18px}
+.flinks{justify-content:center}
+.socrow{padding:32px 18px 0}
+.wa{bottom:18px;right:18px}
+.wa-t{display:none}
+}
+</style>
 
-    footer{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:18px;
-      flex-wrap:wrap;
-      padding:48px 60px;
-      background:#000;
-      border-top:1px solid rgba(184,147,90,.15);
-    }
-    .footer-logo{
-      font-family:'Cormorant Garamond',serif;
-      font-size:21px;
-      letter-spacing:4px;
-      color:var(--gold-light);
-      text-transform:uppercase;
-    }
-    .footer-copy{
-      color:var(--muted);
-      font-size:11px;
-    }
-    .footer-copy span{color:var(--gold)}
-    .footer-links{
-      display:flex;
-      gap:24px;
-      flex-wrap:wrap;
-    }
-    .footer-links a{
-      color:var(--muted);
-      text-decoration:none;
-      font-size:10px;
-      letter-spacing:2px;
-      text-transform:uppercase;
-    }
-    .footer-links a:hover{color:var(--gold)}
-
-    @media (max-width: 1000px){
-      nav{padding:18px 20px}
-      nav ul{display:none}
-      .hero{padding:0 20px 58px}
-      .section{padding:86px 20px}
-      .about,.contact{grid-template-columns:1fr;gap:48px}
-      .about-img-accent,.contact-img-accent,.contact-img-tiny{display:none}
-      .gallery-grid{grid-template-columns:repeat(2,1fr)}
-      .features-grid{grid-template-columns:1fr}
-      footer{padding:38px 20px;text-align:center;justify-content:center}
-      .footer-links{justify-content:center}
-      .social-row{padding:34px 20px 0}
-    }
-    @media (max-width: 600px){
-      .gallery-grid{grid-template-columns:1fr}
-      .about-left,.contact-right{min-height:auto}
-      .about-img-main,.contact-img{height:360px}
-      .contact-right{min-height:380px}
-    }
-  </style>
 </head>
 <body>
 
-  <nav>
-    <a href="#" class="nav-logo">
-      <span class="nav-logo-main">Daniel's Villa &amp; Spa</span>
-      <span class="nav-logo-sub">Isfiya · Luxury Stay</span>
-    </a>
-    <ul>
-      <li><a href="#about">אודות</a></li>
-      <li><a href="#gallery">גלריה</a></li>
-      <li><a href="#features">חוויות</a></li>
-      <li><a href="#contact">צרו קשר</a></li>
-    </ul>
-  </nav>
+<!-- LANG SWITCHER -->
 
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-img"></div>
-    <div class="hero-overlay"></div>
+<div class="lsw">
+  <button class="lbtn active" onclick="setLang('he')">עברית</button>
+  <button class="lbtn" onclick="setLang('en')">EN</button>
+  <button class="lbtn" onclick="setLang('ar')">عربي</button>
+</div>
 
-    <div class="hero-content">
-      <div class="hero-eyebrow">ברוכים הבאים</div>
-      <h1>לדניאל'ס וילה&amp;ספא</h1>
-      <div class="hero-desc">
-        וילה מעוצבת ומרגיעה<br>
-        המציעה חדרים נעימים ומאובזרים לצד מתחם ספא מקורה ומפנק.<br><br>
-        המקום עוצב בקווים נקיים עם נגיעות חמימות ליצירת חוויה אינטימית ושלווה לכל אורח.
+<!-- WHATSAPP -->
+
+<a href="https://wa.me/972507771781" target="_blank" class="wa">
+  <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="16" fill="#25D366"/><path d="M16 7C11.03 7 7 11.03 7 16c0 1.77.49 3.42 1.34 4.83L7 25l4.3-1.32A8.95 8.95 0 0016 25c4.97 0 9-4.03 9-9s-4.03-9-9-9zm4.4 12.3c-.18.5-1.07.97-1.48 1.03-.37.05-.84.07-1.35-.08-.31-.09-.71-.22-1.22-.43-2.14-.92-3.54-3.07-3.65-3.21-.1-.14-.84-1.12-.84-2.13 0-1.01.53-1.51.72-1.71.18-.2.4-.25.53-.25.13 0 .27 0 .38.01.13.01.3-.05.47.36.18.42.6 1.47.65 1.58.06.1.09.23.02.37-.07.14-.1.22-.2.34-.1.12-.21.26-.3.35-.1.1-.2.21-.09.41.12.2.52.86 1.12 1.39.77.68 1.41.89 1.61.99.2.1.32.08.44-.05.12-.13.5-.58.64-.78.13-.2.27-.17.45-.1.18.07 1.16.55 1.36.65.2.1.33.15.38.23.05.08.05.47-.13.97z" fill="white"/></svg>
+  <span class="wa-t" data-he="שלחו הודעה" data-en="Chat with us" data-ar="راسلونا">שלחו הודעה</span>
+</a>
+
+<!-- NAV -->
+
+<nav id="nav">
+  <a href="#" class="nl">
+    <span class="nlm">Daniel's Villa</span>
+    <span class="nls" data-he="וילה וספא · עוספיה" data-en="Villa & Spa · Isfiya" data-ar="فيلا وسبا · عسفيا">וילה וספא · עוספיה</span>
+  </a>
+  <ul>
+    <li><a href="#about" data-he="אודות" data-en="About" data-ar="عن الفيلا">אודות</a></li>
+    <li><a href="#pool" data-he="בריכה וספא" data-en="Pool & Spa" data-ar="المسبح والسبا">בריכה וספא</a></li>
+    <li><a href="#rooms" data-he="חדרים" data-en="Rooms" data-ar="الغرف">חדרים</a></li>
+    <li><a href="#gallery" data-he="גלריה" data-en="Gallery" data-ar="معرض">גלריה</a></li>
+    <li><a href="#contact" class="ncta" data-he="הזמינו" data-en="Book Now" data-ar="احجز">הזמינו</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+  <div class="hbg"></div>
+  <div class="hslides" id="hs">
+    <div class="hs on" style="background-image:url('IMG_9049.jpeg')"></div>
+    <div class="hs" style="background-image:url('IMG_9044.jpeg')"></div>
+    <div class="hs" style="background-image:url('IMG_9036.jpeg')"></div>
+    <div class="hs" style="background-image:url('IMG_9038.jpeg')"></div>
+  </div>
+  <div class="hov"></div>
+  <div class="hc">
+    <div class="heye" data-he="ברוכים הבאים · עוספיה, הר הכרמל" data-en="Welcome · Isfiya, Mount Carmel" data-ar="أهلاً بكم · عسفيا، جبل الكرمل">ברוכים הבאים · עוספיה, הר הכרמל</div>
+    <h1 data-he="דניאל'ס<br><em>וילה וספא</em>" data-en="Daniel's<br><em>Villa &amp; Spa</em>" data-ar="<em>فيلا</em><br>دانيالز وسبا">דניאל'ס<br><em>וילה וספא</em></h1>
+    <p class="hdesc" data-he="וילה מעוצבת ומרגיעה עם מתחם ספא מקורה, בריכה מחוממת, ג'קוזי וסאונה — חוויה בלתי נשכחת בלב עוספיה." data-en="A beautifully designed villa with an indoor spa complex, heated pool, jacuzzi and sauna — an unforgettable experience in the heart of Isfiya." data-ar="فيلا مصممة بشكل رائع مع مجمع سبا داخلي ومسبح مدفأ وجاكوزي وساونا — تجربة لا تُنسى في قلب عسفيا.">וילה מעוצבת ומרגיעה עם מתחם ספא מקורה, בריכה מחוממת, ג'קוזי וסאונה — חוויה בלתי נשכחת בלב עוספיה.</p>
+    <div class="hbtns">
+      <a href="#pool" class="bp" data-he="גלו את הספא" data-en="Explore the Spa" data-ar="استكشف السبا">גלו את הספא</a>
+      <a href="#contact" class="bg" data-he="לפרטים והזמנות" data-en="Book a Visit" data-ar="احجز الآن">לפרטים והזמנות</a>
+    </div>
+  </div>
+</section>
+<div class="dv"></div>
+
+<!-- ABOUT -->
+
+<section class="sec dk" id="about">
+  <div class="ag">
+    <div class="aleft rev">
+      <img src="IMG_9036.jpeg" alt="Villa" class="aim"/>
+      <img src="IMG_9038.jpeg" alt="Garden" class="aima"/>
+    </div>
+    <div class="aright">
+      <div class="sl rev" data-he="הסיפור שלנו" data-en="Our Story" data-ar="قصتنا">הסיפור שלנו</div>
+      <h2 class="rev rd1" data-he="וילה <em>מעוצבת</em><br>ומרגיעה" data-en="A <em>Designed</em><br>Retreat" data-ar="فيلا <em>مصممة</em><br>وهادئة">וילה <em>מעוצבת</em><br>ומרגיעה</h2>
+      <p class="rev rd2" data-he="וילה מעוצבת ומרגיעה המציעה חדרים נעימים ומאובזרים לצד מתחם ספא מקורה ומפנק. המקום עוצב בקווים נקיים עם נגיעות חמימות ליצירת חוויה אינטימית ושלווה לכל אורח." data-en="A beautifully designed villa offering comfortable and well-equipped rooms alongside a luxurious indoor spa complex. The space was designed with clean lines and warm touches to create an intimate and peaceful experience for every guest." data-ar="فيلا مصممة بشكل جميل تقدم غرفاً مريحة ومجهزة جانباً مجمع سبا داخلي فاخر. صُمم المكان بخطوط نظيفة ولمسات دافئة لخلق تجربة حميمة وهادئة لكل ضيف.">וילה מעוצבת ומרגיעה המציעה חדרים נעימים ומאובזרים לצד מתחם ספא מקורה ומפנק. המקום עוצב בקווים נקיים עם נגיעות חמימות ליצירת חוויה אינטימית ושלווה לכל אורח.</p>
+      <p class="rev rd2" data-he="הוילה מגודרת ומבטיחה פרטיות מלאה. כולל שני סלונים מרווחים, מטבח מאובזר, גינה מטופחת עם פינת גריל, שולחן פינג פונג ומיטות שיזוף." data-en="The villa is fully fenced ensuring complete privacy. Includes two spacious lounges, a fully equipped kitchen, a manicured garden with BBQ corner, ping pong table and sun loungers." data-ar="الفيلا محاطة بسياج كامل مما يضمن الخصوصية التامة. تشمل صالونين فسيحين ومطبخاً مجهزاً بالكامل وحديقة منسقة مع ركن شواء وطاولة بينج بونج وكراسي استرخاء.">הוילה מגודרת ומבטיחה פרטיות מלאה. כולל שני סלונים מרווחים, מטבח מאובזר, גינה מטופחת עם פינת גריל, שולחן פינג פונג ומיטות שיזוף.</p>
+      <div class="afeats">
+        <div class="afeat rev rd1"><h4 data-he="חדרים ממוזגים" data-en="Air-Conditioned Rooms" data-ar="غرف مكيفة">חדרים ממוזגים</h4><p data-he="טלוויזיות עם yes בכל חדר" data-en="Smart TVs in every room" data-ar="تلفزيونات ذكية في كل غرفة">טלוויזיות עם yes בכל חדר</p></div>
+        <div class="afeat rev rd2"><h4 data-he="שני סלונים" data-en="Two Lounges" data-ar="صالونان">שני סלונים</h4><p data-he="מרווחים ונוחים עם מערכות שמע" data-en="Spacious with sound systems" data-ar="فسيحان مع أنظمة صوت">מרווחים ונוחים עם מערכות שמע</p></div>
+        <div class="afeat rev rd3"><h4 data-he="גינה מטופחת" data-en="Manicured Garden" data-ar="حديقة منسقة">גינה מטופחת</h4><p data-he="גריל, פינג פונג, ישיבה חיצונית" data-en="BBQ, ping pong, outdoor seating" data-ar="شواء وبينج بونج وجلسة خارجية">גריל, פינג פונג, ישיבה חיצונית</p></div>
+        <div class="afeat rev rd4"><h4 data-he="פרטיות מלאה" data-en="Full Privacy" data-ar="خصوصية تامة">פרטיות מלאה</h4><p data-he="הוילה מגודרת לחלוטין" data-en="Fully fenced villa" data-ar="فيلا مسوّرة بالكامل">הוילה מגודרת לחלוטין</p></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+<div class="dv"></div>
 
-  <div class="divider"></div>
+<!-- POOL & SPA SECTION -->
 
-  <section class="section dark" id="about">
-    <div class="about">
-      <div class="about-left">
-        <img src="IMG_9037.jpeg" alt="Villa main" class="about-img-main">
-        <img src="IMG_9038.jpeg" alt="Villa accent" class="about-img-accent">
+<section class="sec md pool-sec" id="pool">
+  <div class="sl rev" data-he="מתחם הבריכה והספא" data-en="Pool & Spa Complex" data-ar="مجمع المسبح والسبا">מתחם הבריכה והספא</div>
+  <h2 class="rev rd1" data-he="<em>בריכה</em> מחוממת,<br>ג'קוזי וסאונה" data-en="<em>Heated Pool</em>,<br>Jacuzzi & Sauna" data-ar="<em>مسبح</em> مدفأ<br>وجاكوزي وساونا"><em>בריכה</em> מחוממת,<br>ג'קוזי וסאונה</h2>
+  <p class="rev rd2" data-he="מתחם ספא מקורה ומפנק הכולל בריכת שחייה מחוממת, ג'קוזי טיפולי רב-מושבי, סאונה יבשה, מקלחת ושירותים נפרדים." data-en="A luxurious indoor spa complex featuring a heated swimming pool, multi-seat therapeutic jacuzzi, dry sauna, separate shower and restrooms." data-ar="مجمع سبا داخلي فاخر يضم مسبح سباحة مدفأ وجاكوزي علاجي متعدد المقاعد وساونا جافة ودش منفصل ومراحيض.">מתחם ספא מקורה ומפנק הכולל בריכת שחייה מחוממת, ג'קוזי טיפולי רב-מושבי, סאונה יבשה, מקלחת ושירותים נפרדים.</p>
+
+  <!-- Row 1: 4 pool/spa photos -->
+
+  <div class="pool-grid rev">
+    <div class="pg-item" style="height:260px" onclick="openLb(0)">
+      <img src="IMG_9049.jpeg" alt="Pool"/>
+      <div class="pg-ov"><span class="pglbl" data-he="בריכה פנימית" data-en="Indoor Pool" data-ar="مسبح داخلي">בריכה פנימית</span></div>
+    </div>
+    <div class="pg-item" style="height:260px" onclick="openLb(1)">
+      <img src="IMG_9044.jpeg" alt="Jacuzzi"/>
+      <div class="pg-ov"><span class="pglbl" data-he="ג'קוזי" data-en="Jacuzzi" data-ar="جاكوزي">ג'קוזי</span></div>
+    </div>
+    <div class="pg-item" style="height:260px" onclick="openLb(2)">
+      <img src="IMG_9045.jpeg" alt="Spa overview"/>
+      <div class="pg-ov"><span class="pglbl" data-he="מתחם הספא" data-en="Spa Complex" data-ar="مجمع السبا">מתחם הספא</span></div>
+    </div>
+    <div class="pg-item" style="height:260px" onclick="openLb(3)">
+      <img src="IMG_9043.jpeg" alt="Sauna"/>
+      <div class="pg-ov"><span class="pglbl" data-he="סאונה" data-en="Sauna" data-ar="ساونا">סאונה</span></div>
+    </div>
+  </div>
+
+  <!-- Row 2: wider + 2 -->
+
+  <div class="pool-grid-2 rev" style="margin-top:8px">
+    <div class="pg-item" style="height:240px" onclick="openLb(4)">
+      <img src="IMG_9050.jpeg" alt="Pool view"/>
+      <div class="pg-ov"><span class="pglbl" data-he="נוף הבריכה" data-en="Pool View" data-ar="منظر المسبح">נוף הבריכה</span></div>
+    </div>
+    <div class="pg-item" style="height:240px" onclick="openLb(5)">
+      <img src="IMG_9051.jpeg" alt="Pool outdoor"/>
+      <div class="pg-ov"><span class="pglbl" data-he="חצר הבריכה" data-en="Pool Yard" data-ar="ساحة المسبح">חצר הבריכה</span></div>
+    </div>
+    <div class="pg-item" style="height:240px" onclick="openLb(6)">
+      <img src="IMG_9047.jpeg" alt="Spa amenities"/>
+      <div class="pg-ov"><span class="pglbl" data-he="פינוקי הספא" data-en="Spa Amenities" data-ar="مميزات السبا">פינוקי הספא</span></div>
+    </div>
+  </div>
+</section>
+<div class="dv"></div>
+
+<!-- ROOMS SECTION -->
+
+<section class="sec dk rooms-sec" id="rooms">
+  <div class="sl rev" data-he="חדרי השינה" data-en="Bedrooms" data-ar="غرف النوم">חדרי השינה</div>
+  <h2 class="rev rd1" data-he="<em>חדרים</em><br>מעוצבים בסגנון ייחודי" data-en="<em>Rooms</em><br>with Unique Character" data-ar="<em>غرف</em><br>بطابع فريد"><em>חדרים</em><br>מעוצבים בסגנון ייחודי</h2>
+  <p class="rev rd2" data-he="כל חדר מעוצב בסגנון ייחודי — מהסגנון הבוהמי החמים ועד הקלאסי המפואר והנאוטי הים תיכוני. כל החדרים כוללים מיזוג אוויר וטלוויזיה חכמה." data-en="Each room is uniquely designed — from the warm bohemian style to the grand classic and fresh nautical Mediterranean. All rooms include air conditioning and smart TV." data-ar="كل غرفة مصممة بأسلوب فريد — من الطراز البوهيمي الدافئ إلى الكلاسيكي الفخم والبحري المتوسطي. جميع الغرف تشمل تكييف وتلفزيون ذكي.">כל חדר מעוצב בסגנון ייחודי — מהסגנון הבוהמי החמים ועד הקלאסי המפואר והנאוטי הים תיכוני. כל החדרים כוללים מיזוג אוויר וטלוויזיה חכמה.</p>
+  <div class="rooms-grid">
+    <div class="room-card rev" onclick="openLb(7)">
+      <img src="IMG_9053.jpeg" alt="Boho Room"/>
+      <div class="room-ov">
+        <div class="rtitle" data-he="חדר בוהמי" data-en="Boho Room" data-ar="غرفة بوهيمية">חדר בוהמי</div>
+        <div class="rsub" data-he="קסם טבעי וחמים" data-en="Warm Natural Charm" data-ar="سحر طبيعي دافئ">קסם טבעי וחמים</div>
       </div>
+    </div>
+    <div class="room-card rev rd1" onclick="openLb(8)">
+      <img src="IMG_9037.jpeg" alt="Classic Room"/>
+      <div class="room-ov">
+        <div class="rtitle" data-he="חדר קלאסי" data-en="Classic Room" data-ar="غرفة كلاسيكية">חדר קלאסי</div>
+        <div class="rsub" data-he="מיטת עמודים מפוארת" data-en="Grand Four-Poster Bed" data-ar="سرير كلاسيكي فاخر">מיטת עמודים מפוארת</div>
+      </div>
+    </div>
+    <div class="room-card rev rd2" onclick="openLb(9)">
+      <img src="IMG_9041.jpeg" alt="Nautical Room"/>
+      <div class="room-ov">
+        <div class="rtitle" data-he="חדר ים תיכוני" data-en="Mediterranean Room" data-ar="غرفة متوسطية">חדר ים תיכוני</div>
+        <div class="rsub" data-he="עיצוב נאוטי ורענן" data-en="Fresh Nautical Design" data-ar="تصميم بحري منعش">עיצוב נאוטי ורענן</div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="dv"></div>
 
-      <div class="about-right">
-        <div class="section-label">הסיפור שלנו</div>
-        <h2>וילה מעוצבת<br>ומרגיעה</h2>
-        <p>
-          וילה מעוצבת ומרגיעה המציעה חדרים נעימים ומאובזרים לצד מתחם ספא מקורה ומפנק.
-        </p>
-        <p>
-          המקום עוצב בקווים נקיים עם נגיעות חמימות ליצירת חוויה אינטימית ושלווה לכל אורח.
-        </p>
+<!-- FULL GALLERY -->
 
-        <div class="about-feats">
-          <div class="about-feat">
-            <h4>חדרים נעימים</h4>
-            <p>חדרים ממוזגים טלוויזיות עם yes.</p>
-          </div>
-          <div class="about-feat">
-            <h4>שני סלונים</h4>
-            <p>שני סלונים מרווחים ונוחים.</p>
-          </div>
-          <div class="about-feat">
-            <h4>פרטיות מלאה</h4>
-            <p>הוילה מגודרת ומבטיחה פרטיות מלאה לכל האורחים.</p>
-          </div>
-          <div class="about-feat">
-            <h4>אווירה אינטימית</h4>
-            <p>מרחב שקט, חמים ומרגיע.</p>
-          </div>
+<section class="sec md" id="gallery">
+  <div class="gal-head rev">
+    <div>
+      <div class="sl" data-he="כל הצילומים" data-en="All Photos" data-ar="جميع الصور">כל הצילומים</div>
+      <h2 data-he="ה<em>גלריה</em>" data-en="The <em>Gallery</em>" data-ar="<em>المعرض</em>">ה<em>גלריה</em></h2>
+    </div>
+    <div class="gcnt" data-he="20 תמונות" data-en="20 Photos" data-ar="٢٠ صورة">20 תמונות</div>
+  </div>
+  <div class="ggrid rev">
+    <div class="gi" onclick="openLb(0)"><img src="IMG_9049.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="בריכה פנימית" data-en="Indoor Pool" data-ar="مسبح داخلي">בריכה פנימית</span></div></div>
+    <div class="gi" onclick="openLb(1)"><img src="IMG_9044.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="ג'קוזי וספא" data-en="Jacuzzi & Spa" data-ar="جاكوزي وسبا">ג'קוזי וספא</span></div></div>
+    <div class="gi" onclick="openLb(2)"><img src="IMG_9045.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="מתחם הספא" data-en="Spa Area" data-ar="منطقة السبا">מתחם הספא</span></div></div>
+    <div class="gi" onclick="openLb(3)"><img src="IMG_9043.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="סאונה" data-en="Sauna" data-ar="ساونا">סאונה</span></div></div>
+    <div class="gi" onclick="openLb(4)"><img src="IMG_9050.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="נוף הבריכה" data-en="Pool View" data-ar="منظر المسبح">נוף הבריכה</span></div></div>
+    <div class="gi" onclick="openLb(5)"><img src="IMG_9051.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="חצר הבריכה" data-en="Pool Yard" data-ar="ساحة المسبح">חצר הבריכה</span></div></div>
+    <div class="gi" onclick="openLb(6)"><img src="IMG_9047.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="פינוקי ספא" data-en="Spa Amenities" data-ar="مميزات السبا">פינוקי ספא</span></div></div>
+    <div class="gi" onclick="openLb(7)"><img src="IMG_9053.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="חדר בוהמי" data-en="Boho Room" data-ar="غرفة بوهيمية">חדר בוהמי</span></div></div>
+    <div class="gi" onclick="openLb(8)"><img src="IMG_9037.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="חדר קלאסי" data-en="Classic Room" data-ar="غرفة كلاسيكية">חדר קלאסי</span></div></div>
+    <div class="gi" onclick="openLb(9)"><img src="IMG_9041.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="חדר נאוטי" data-en="Nautical Room" data-ar="غرفة بحرية">חדר נאוטי</span></div></div>
+    <div class="gi" onclick="openLb(10)"><img src="IMG_9048.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="מטבח" data-en="Kitchen" data-ar="مطبخ">מטבח</span></div></div>
+    <div class="gi" onclick="openLb(11)"><img src="IMG_9042.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="פינת אוכל" data-en="Dining Area" data-ar="منطقة الطعام">פינת אוכל</span></div></div>
+    <div class="gi" onclick="openLb(12)"><img src="IMG_9046.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="גינה וגריל" data-en="Garden & BBQ" data-ar="حديقة وشواء">גינה וגריל</span></div></div>
+    <div class="gi" onclick="openLb(13)"><img src="IMG_9039.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="חדר אוכל בית" data-en="Home Dining" data-ar="غرفة طعام">חדר אוכל בית</span></div></div>
+    <div class="gi" onclick="openLb(14)"><img src="IMG_9040.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="חדר בוהמי 2" data-en="Boho Room 2" data-ar="غرفة بوهيمية 2">חדר בוהמי 2</span></div></div>
+    <div class="gi" onclick="openLb(15)"><img src="IMG_9036.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="חזית הוילה" data-en="Villa Front" data-ar="واجهة الفيلا">חזית הוילה</span></div></div>
+    <div class="gi" onclick="openLb(16)"><img src="IMG_9052.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="סלון" data-en="Lounge" data-ar="صالون">סלון</span></div></div>
+    <div class="gi" onclick="openLb(17)"><img src="IMG_9038.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="חצר" data-en="Courtyard" data-ar="ساحة">חצר</span></div></div>
+    <div class="gi" onclick="openLb(18)"><img src="IMG_9065.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="תמונה 19" data-en="Photo 19" data-ar="صورة ١٩">תמונה 19</span></div></div>
+    <div class="gi" onclick="openLb(19)"><img src="IMG_9066.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="תמונה 20" data-en="Photo 20" data-ar="صورة ٢٠">תמונה 20</span></div></div>
+  </div>
+</section>
+<div class="dv"></div>
+
+<!-- FEATURES -->
+
+<section class="sec dk" id="features">
+  <div class="fh">
+    <div class="sl rev" data-he="מה כלול" data-en="What's Included" data-ar="ما يشمله">מה כלול</div>
+    <h2 class="rev rd1" data-he="ה<em>חוויה</em><br>שמגיעה לכם" data-en="The <em>Experience</em><br>You Deserve" data-ar="<em>التجربة</em><br>التي تستحقونها">ה<em>חוויה</em><br>שמגיעה לכם</h2>
+  </div>
+  <div class="fgrid">
+    <div class="fc rev"><div class="fnum">01</div><div class="ficon">🏊</div><h3 data-he="בריכה מחוממת" data-en="Heated Pool" data-ar="مسبح مدفأ">בריכה מחוממת</h3><p data-he="מתחם ספא כולל בריכת שחייה פנימית מחוממת לאורך כל השנה." data-en="Spa complex featuring a heated indoor swimming pool open all year round." data-ar="مجمع سبا يضم مسبح سباحة داخلي مدفأ طوال العام.">מתחם ספא כולל בריכת שחייה פנימית מחוממת לאורך כל השנה.</p></div>
+    <div class="fc rev rd1"><div class="fnum">02</div><div class="ficon">🛁</div><h3 data-he="ג'קוזי וסאונה" data-en="Jacuzzi & Sauna" data-ar="جاكوزي وساونا">ג'קוזי וסאונה</h3><p data-he="ג'קוזי טיפולי רב-מושבי וסאונה יבשה, מקלחת עם שירותים נפרדים." data-en="Multi-seat therapeutic jacuzzi and dry sauna with separate shower and restrooms." data-ar="جاكوزي علاجي متعدد المقاعد وساونا جافة مع دش منفصل ومراحيض.">ג'קוזי טיפולי רב-מושבי וסאונה יבשה, מקלחת עם שירותים נפרדים.</p></div>
+    <div class="fc rev rd2"><div class="fnum">03</div><div class="ficon">🛋️</div><h3 data-he="שני סלונים" data-en="Two Lounges" data-ar="صالونان">שני סלונים</h3><p data-he="שני אזורי ישיבה מרווחים עם ספות נוחות, טלוויזיות ומערכות שמע." data-en="Two spacious seating areas with comfortable sofas, TVs and sound systems." data-ar="منطقتا جلوس فسيحتان مع أرائك مريحة وتلفزيونات وأنظمة صوت.">שני אזורי ישיבה מרווחים עם ספות נוחות, טלוויזיות ומערכות שמע.</p></div>
+    <div class="fc rev rd1"><div class="fnum">04</div><div class="ficon">🍽️</div><h3 data-he="מטבח ואוכל" data-en="Kitchen & Dining" data-ar="مطبخ وطعام">מטבח ואוכל</h3><p data-he="מטבח מאובזר במלואו עם אי בר ושולחן אוכל גדול לאירוח." data-en="Fully equipped kitchen with bar island and large dining table for entertaining." data-ar="مطبخ مجهز بالكامل مع جزيرة بار وطاولة طعام كبيرة للاستضافة.">מטבח מאובזר במלואו עם אי בר ושולחן אוכל גדול לאירוח.</p></div>
+    <div class="fc rev rd2"><div class="fnum">05</div><div class="ficon">🌿</div><h3 data-he="גינה ופנאי" data-en="Garden & Leisure" data-ar="حديقة وترفيه">גינה ופנאי</h3><p data-he="גינה מטופחת, פינת גריל, שולחן פינג פונג, מיטות שיזוף ופינת עישון מקורה." data-en="Manicured garden, BBQ corner, ping pong table, sun loungers and covered smoking area." data-ar="حديقة منسقة وركن شواء وطاولة بينج بونج وكراسي استرخاء ومنطقة تدخين مسقوفة.">גינה מטופחת, פינת גריל, שולחן פינג פונג, מיטות שיזוף ופינת עישון מקורה.</p></div>
+    <div class="fc rev rd3"><div class="fnum">06</div><div class="ficon">🔒</div><h3 data-he="פרטיות מלאה" data-en="Full Privacy" data-ar="خصوصية تامة">פרטיות מלאה</h3><p data-he="הוילה מגודרת ומבטיחה פרטיות מלאה. ללא שכנים, ללא הפרעות — רק אתם." data-en="The villa is fully fenced ensuring complete privacy. No neighbors, no interruptions — just you." data-ar="الفيلا مسوّرة بالكامل مما يضمن خصوصية تامة. لا جيران ولا انقطاعات — فقط أنتم.">הוילה מגודרת ומבטיחה פרטיות מלאה. ללא שכנים, ללא הפרעות — רק אתם.</p></div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+
+<div class="quote rev">
+  <blockquote data-he='"מתחם ספא מפנק, חדרים מרווחים, סלונים נעימים, וגינה מטופחת — חוויה אינטימית ושלווה לכל אורח."' data-en='"A luxurious spa complex, spacious rooms, comfortable lounges, and a manicured garden — an intimate and peaceful experience for every guest."' data-ar='"مجمع سبا فاخر وغرف فسيحة وصالونات مريحة وحديقة منسقة — تجربة حميمة وهادئة لكل ضيف."'>"מתחם ספא מפנק, חדרים מרווחים, סלונים נעימים, וגינה מטופחת — חוויה אינטימית ושלווה לכל אורח."</blockquote>
+  <cite data-he="— דניאל'ס וילה וספא · עוספיה" data-en="— Daniel's Villa & Spa · Isfiya" data-ar="— فيلا دانيالز وسبا · عسفيا">— דניאל'ס וילה וספא · עוספיה</cite>
+</div>
+
+<!-- CONTACT -->
+
+<section class="sec md" id="contact">
+  <div class="cg">
+    <div class="cleft">
+      <div class="sl rev" data-he="צרו קשר" data-en="Contact Us" data-ar="تواصل معنا">צרו קשר</div>
+      <h2 class="rev rd1" data-he="הזמינו את<br><em>החוויה שלכם</em>" data-en="Reserve<br><em>Your Experience</em>" data-ar="احجز<br><em>تجربتك</em>">הזמינו את<br><em>החוויה שלכם</em></h2>
+      <p class="rev rd2" data-he="נשמח לארח אתכם. פנו אלינו לבדיקת זמינות, סיור פרטי או לפרטים נוספים על הוילה." data-en="We'd love to host you. Contact us to check availability, arrange a private tour, or get more details." data-ar="سيسعدنا استضافتكم. تواصلوا معنا للتحقق من التوفر أو ترتيب جولة خاصة أو الحصول على مزيد من التفاصيل.">נשמח לארח אתכם. פנו אלינו לבדיקת זמינות, סיור פרטי או לפרטים נוספים על הוילה.</p>
+      <div class="citems">
+        <a href="tel:+972507771781" class="ci rev rd1">
+          <div class="cico">📞</div>
+          <div><span class="clbl" data-he="טלפון" data-en="Phone" data-ar="هاتف">טלפון</span><span class="cval">+972 50-777-1781</span></div>
+        </a>
+        <a href="https://wa.me/972507771781" target="_blank" class="ci rev rd2">
+          <div class="cico">💬</div>
+          <div><span class="clbl">WhatsApp</span><span class="cval" data-he="שלחו הודעה ישירות" data-en="Message us directly" data-ar="راسلونا مباشرة">שלחו הודעה ישירות</span></div>
+        </a>
+        <a href="https://www.instagram.com/mona_daniels_villa?igsh=MXYxMXNpZ3Bvc252MQ==" target="_blank" class="ci rev rd3">
+          <div class="cico">📸</div>
+          <div><span class="clbl">Instagram</span><span class="cval">@mona_daniels_villa</span></div>
+        </a>
+        <div class="ci rev rd4">
+          <div class="cico">📍</div>
+          <div><span class="clbl" data-he="מיקום" data-en="Location" data-ar="الموقع">מיקום</span><span class="cval" data-he="עוספיה, הר הכרמל" data-en="Isfiya, Mount Carmel" data-ar="عسفيا، جبل الكرمل">עוספיה, הר הכרמל</span></div>
         </div>
       </div>
     </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <section class="section mid" id="gallery">
-    <div class="gallery-header">
-      <div>
-        <div class="section-label">מסע ויזואלי</div>
-        <h2>הגלריה</h2>
-      </div>
-      <div class="gallery-count">18 תמונות</div>
-    </div>
-
-    <div class="gallery-grid">
-      <div class="g-item"><img src="IMG_9039.jpeg" alt="Image 1"><div class="g-overlay"><span class="g-label">תמונה 1</span></div></div>
-      <div class="g-item"><img src="IMG_9040.jpeg" alt="Image 2"><div class="g-overlay"><span class="g-label">תמונה 2</span></div></div>
-      <div class="g-item"><img src="IMG_9041.jpeg" alt="Image 3"><div class="g-overlay"><span class="g-label">תמונה 3</span></div></div>
-      <div class="g-item"><img src="IMG_9042.jpeg" alt="Image 4"><div class="g-overlay"><span class="g-label">תמונה 4</span></div></div>
-      <div class="g-item"><img src="IMG_9043.jpeg" alt="Image 5"><div class="g-overlay"><span class="g-label">תמונה 5</span></div></div>
-      <div class="g-item"><img src="IMG_9044.jpeg" alt="Image 6"><div class="g-overlay"><span class="g-label">תמונה 6</span></div></div>
-      <div class="g-item"><img src="IMG_9045.jpeg" alt="Image 7"><div class="g-overlay"><span class="g-label">תמונה 7</span></div></div>
-      <div class="g-item"><img src="IMG_9046.jpeg" alt="Image 8"><div class="g-overlay"><span class="g-label">תמונה 8</span></div></div>
-      <div class="g-item"><img src="IMG_9047.jpeg" alt="Image 9"><div class="g-overlay"><span class="g-label">תמונה 9</span></div></div>
-      <div class="g-item"><img src="IMG_9048.jpeg" alt="Image 10"><div class="g-overlay"><span class="g-label">תמונה 10</span></div></div>
-      <div class="g-item"><img src="IMG_9049.jpeg" alt="Image 11"><div class="g-overlay"><span class="g-label">תמונה 11</span></div></div>
-      <div class="g-item"><img src="IMG_9050.jpeg" alt="Image 12"><div class="g-overlay"><span class="g-label">תמונה 12</span></div></div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <section class="section dark" id="features">
-    <div class="features-header">
-      <div class="section-label">מה אנחנו מציעים</div>
-      <h2>החוויה<br>שמגיעה לכם</h2>
-    </div>
-
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-num">01</div>
-        <div class="feature-icon">🏊</div>
-        <h3>בריכה מחוממת</h3>
-        <p>מתחם ספא כולל בריכה מחוממת.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-num">02</div>
-        <div class="feature-icon">🛁</div>
-        <h3>ג'קוזי וסאונה</h3>
-        <p>ג'קוזי וסאונה יבישה, מקלחת עם שירותים.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-num">03</div>
-        <div class="feature-icon">🍽️</div>
-        <h3>מטבח ואוכל</h3>
-        <p>לצד מטבח מאובזר, שולחן אוכל ומיטות שיזוף.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-num">04</div>
-        <div class="feature-icon">🛋️</div>
-        <h3>פינת ישיבה</h3>
-        <p>פינת ישיבה, טלוויזיה ומערכת שמע.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-num">05</div>
-        <div class="feature-icon">🌿</div>
-        <h3>גינה ופנאי</h3>
-        <p>גינה מטופחת, פינת גריל, פינת עישון מקורה, שולחן פינג פונג.</p>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-num">06</div>
-        <div class="feature-icon">🔒</div>
-        <h3>פרטיות מלאה</h3>
-        <p>הוילה מגודרת ומבטיחה פרטיות מלאה לכל האורחים.</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="quote-strip">
-    <blockquote>
-      מתחם ספא מפנק, חדרים מרווחים, סלונים נעימים, וגינה מטופחת — חוויה אינטימית ושלווה לכל אורח.
-    </blockquote>
-    <cite>Daniel's Villa &amp; Spa</cite>
-  </div>
-
-  <section class="section mid" id="contact">
-    <div class="contact">
-      <div class="contact-left">
-        <div class="section-label">צרו קשר</div>
-        <h2>הזמינו את<br>החוויה שלכם</h2>
-        <p>
-          נשמח לארח אתכם. פנו אלינו לבדיקת זמינות, סיור פרטי או לפרטים נוספים על הוילה.
-        </p>
-
-        <div class="contact-items">
-          <a href="tel:+972507771781" class="contact-item">
-            <div class="contact-item-icon">📞</div>
-            <div>
-              <span class="contact-item-label">טלפון</span>
-              <span class="contact-item-value">+972 50-777-1781</span>
-            </div>
-          </a>
-
-          <a href="https://wa.me/972507771781" target="_blank" class="contact-item">
-            <div class="contact-item-icon">💬</div>
-            <div>
-              <span class="contact-item-label">WhatsApp</span>
-              <span class="contact-item-value">שלחו הודעה ישירות</span>
-            </div>
-          </a>
-
-          <a href="https://www.instagram.com/mona_daniels_villa?igsh=MXYxMXNpZ3Bvc252MQ==" target="_blank" class="contact-item">
-            <div class="contact-item-icon">📸</div>
-            <div>
-              <span class="contact-item-label">Instagram</span>
-              <span class="contact-item-value">@mona_daniels_villa</span>
-            </div>
-          </a>
-
-          <div class="contact-item">
-            <div class="contact-item-icon">📍</div>
-            <div>
-              <span class="contact-item-label">מיקום</span>
-              <span class="contact-item-value">עוספיה, הר הכרמל</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="contact-right">
-        <img src="IMG_9051.jpeg" alt="Contact main" class="contact-img">
-        <img src="IMG_9052.jpeg" alt="Contact accent" class="contact-img-accent">
-        <img src="IMG_9053.jpeg" alt="Contact tiny" class="contact-img-tiny">
-      </div>
-    </div>
-  </section>
-
-  <div class="social-row">
-    <a href="https://www.instagram.com/mona_daniels_villa?igsh=MXYxMXNpZ3Bvc252MQ==" target="_blank" class="social-link" title="Instagram">📸</a>
-    <a href="https://wa.me/972507771781" target="_blank" class="social-link" title="WhatsApp">💬</a>
-    <a href="tel:+972507771781" class="social-link" title="Phone">📞</a>
-  </div>
-
-  <div class="map-section">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6660.5!2d35.0527!3d32.7308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151db8c0b0b0b0b1%3A0x0!2sIsfiya!5e0!3m2!1sen!2s!4v1" allowfullscreen="" loading="lazy"></iframe>
-    <div class="map-overlay"></div>
-    <div class="map-pin">
-      <div class="map-pin-dot"></div>
-      <div class="map-pin-label">Daniel's Villa · Isfiya</div>
+    <div class="cright rev rd2">
+      <img src="IMG_9044.jpeg" alt="Villa" class="cimg"/>
+      <img src="IMG_9047.jpeg" alt="Spa" class="cimga"/>
     </div>
   </div>
+</section>
 
-  <footer>
-    <div class="footer-logo">Daniel's Villa</div>
-    <div class="footer-copy">&copy; 2025 <span>Daniel's Villa &amp; Spa</span>.</div>
-    <div class="footer-links">
-      <a href="#about">אודות</a>
-      <a href="#gallery">גלריה</a>
-      <a href="#features">חוויות</a>
-      <a href="#contact">צרו קשר</a>
-    </div>
-  </footer>
+<!-- SOCIAL -->
 
-  <script>
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
-      });
-    }, { threshold: 0.12 });
+<div class="socrow">
+  <a href="https://www.instagram.com/mona_daniels_villa?igsh=MXYxMXNpZ3Bvc252MQ==" target="_blank" class="socl ig-l" title="Instagram">
+    <svg viewBox="0 0 24 24" fill="none"><defs><linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#f09433"/><stop offset="50%" style="stop-color:#dc2743"/><stop offset="100%" style="stop-color:#bc1888"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="5" stroke="url(#ig)" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="4" stroke="url(#ig)" stroke-width="2" fill="none"/><circle cx="17.5" cy="6.5" r="1.2" fill="url(#ig)"/></svg>
+  </a>
+  <a href="https://wa.me/972507771781" target="_blank" class="socl" title="WhatsApp" style="color:#25D366;border-color:rgba(37,211,102,.28)">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.1-1.34A9.93 9.93 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm4.2 13.8c-.18.5-1.06.96-1.47 1.02-.37.05-.84.07-1.35-.09-.31-.09-.71-.22-1.22-.43-2.14-.92-3.54-3.07-3.65-3.21-.1-.14-.84-1.12-.84-2.13 0-1.01.52-1.5.72-1.71.18-.2.4-.25.53-.25.13 0 .27 0 .38.01.12.01.3-.05.46.36.18.42.6 1.47.65 1.58.06.1.09.22.02.36-.07.14-.1.22-.2.34l-.3.35c-.1.1-.2.21-.09.41.12.2.52.86 1.11 1.39.77.68 1.41.89 1.61.99.2.1.32.08.44-.05.12-.13.5-.58.63-.78.14-.2.27-.17.45-.1.18.07 1.16.55 1.36.65.2.1.33.15.38.23.05.08.05.47-.13.97z"/></svg>
+  </a>
+  <a href="tel:+972507771781" class="socl" title="Call" style="color:var(--gold);border-color:rgba(184,147,90,.28)">📞</a>
+</div>
 
-    document.querySelectorAll('.section, .about, .gallery-grid, .features-grid, .contact, .quote-strip').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(26px)';
-      el.style.transition = 'opacity .75s ease, transform .75s ease';
-      observer.observe(el);
-    });
+<!-- MAP -->
 
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, { threshold: 0.12 });
+<div class="mapsec">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.5!2d35.0527!3d32.7308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzLCsDQzJzUwLjkiTiAzNcKwMDMnMDkuNyJF!5e0!3m2!1sen!2s!4v1" allowfullscreen="" loading="lazy"></iframe>
+  <div class="mapov"></div>
+  <div class="mappin">
+    <div class="mapdot"></div>
+    <div class="maplbl" data-he="דניאל'ס וילה · עוספיה" data-en="Daniel's Villa · Isfiya" data-ar="فيلا دانيالز · عسفيا">דניאל'ס וילה · עוספיה</div>
+  </div>
+</div>
 
-    document.querySelectorAll('.section, .about, .gallery-grid, .features-grid, .contact, .quote-strip').forEach(el => io.observe(el));
-  </script>
+<!-- FOOTER -->
+
+<footer>
+  <div class="flogo">Daniel's Villa</div>
+  <div class="fcopy">&copy; 2025 <span>Daniel's Villa &amp; Spa</span>.</div>
+  <div class="flinks">
+    <a href="#about" data-he="אודות" data-en="About" data-ar="عن الفيلا">אודות</a>
+    <a href="#pool" data-he="בריכה וספא" data-en="Pool & Spa" data-ar="المسبح">בריכה וספא</a>
+    <a href="#rooms" data-he="חדרים" data-en="Rooms" data-ar="الغرف">חדרים</a>
+    <a href="#gallery" data-he="גלריה" data-en="Gallery" data-ar="معرض">גלריה</a>
+    <a href="#contact" data-he="צרו קשר" data-en="Contact" data-ar="تواصل">צרו קשר</a>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+
+<div class="lb" id="lb">
+  <button class="lbx" onclick="closeLb()">✕</button>
+  <button class="lbp" onclick="lbNav(-1)">‹</button>
+  <img id="lbImg" src="" alt=""/>
+  <button class="lbn" onclick="lbNav(1)">›</button>
+  <div class="lbcnt" id="lbCnt"></div>
+</div>
+
+<script>
+// NAV SCROLL
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('sc',scrollY>60));
+
+// HERO SLIDESHOW
+const slides=document.querySelectorAll('.hs');
+let si=0;
+setInterval(()=>{slides[si].classList.remove('on');si=(si+1)%slides.length;slides[si].classList.add('on')},5000);
+
+// REVEAL
+const ro=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('vis');ro.unobserve(x.target)}})},{threshold:.1});
+document.querySelectorAll('.rev').forEach(el=>ro.observe(el));
+
+// LIGHTBOX
+const imgs=['IMG_9049.jpeg','IMG_9044.jpeg','IMG_9045.jpeg','IMG_9043.jpeg','IMG_9050.jpeg','IMG_9051.jpeg','IMG_9047.jpeg','IMG_9053.jpeg','IMG_9037.jpeg','IMG_9041.jpeg','IMG_9048.jpeg','IMG_9042.jpeg','IMG_9046.jpeg','IMG_9039.jpeg','IMG_9040.jpeg','IMG_9036.jpeg','IMG_9052.jpeg','IMG_9038.jpeg','IMG_9065.jpeg','IMG_9066.jpeg'];
+let lbi=0;
+function openLb(i){lbi=i;document.getElementById('lbImg').src=imgs[i];document.getElementById('lbCnt').textContent=(i+1)+' / '+imgs.length;document.getElementById('lb').classList.add('open')}
+function closeLb(){document.getElementById('lb').classList.remove('open')}
+function lbNav(d){lbi=(lbi+d+imgs.length)%imgs.length;openLb(lbi)}
+document.getElementById('lb').addEventListener('click',e=>{if(e.target===document.getElementById('lb'))closeLb()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft')lbNav(-1);if(e.key==='ArrowRight')lbNav(1)});
+
+// LANGUAGE
+function setLang(lang){
+  const d={he:'rtl',en:'ltr',ar:'rtl'};
+  const f={he:"'Frank Ruhl Libre',serif",en:"'Montserrat',sans-serif",ar:"'Tajawal',sans-serif"};
+  document.documentElement.setAttribute('lang',lang);
+  document.documentElement.setAttribute('dir',d[lang]);
+  document.body.className='lang-'+lang;
+  document.body.style.fontFamily=f[lang];
+  document.querySelectorAll('.lbtn').forEach(b=>b.classList.toggle('active',b.getAttribute('onclick').includes("'"+lang+"'")));
+  document.querySelectorAll('[data-'+lang+']').forEach(el=>el.innerHTML=el.getAttribute('data-'+lang));
+  localStorage.setItem('dvl',lang);
+}
+setLang(localStorage.getItem('dvl')||'he');
+</script>
+
 </body>
 </html>
