@@ -405,7 +405,7 @@ footer{flex-direction:column;text-align:center;padding:34px 18px}
       <div class="sl" data-he="כל הצילומים" data-en="All Photos" data-ar="جميع الصور">כל הצילומים</div>
       <h2 data-he="ה<em>גלריה</em>" data-en="The <em>Gallery</em>" data-ar="<em>المعرض</em>">ה<em>גלריה</em></h2>
     </div>
-    <div class="gcnt" data-he="20 תמונות" data-en="20 Photos" data-ar="٢٠ صورة">20 תמונות</div>
+    <div class="gcnt" data-he="18 תמונות" data-en="18 Photos" data-ar="١٨ صورة">18 תמונות</div>
   </div>
   <div class="ggrid rev">
     <div class="gi" onclick="openLb(0)"><img src="IMG_9049.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="בריכה פנימית" data-en="Indoor Pool" data-ar="مسبح داخلي">בריכה פנימית</span></div></div>
@@ -426,8 +426,7 @@ footer{flex-direction:column;text-align:center;padding:34px 18px}
     <div class="gi" onclick="openLb(15)"><img src="IMG_9036.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="חזית הוילה" data-en="Villa Front" data-ar="واجهة الفيلا">חזית הוילה</span></div></div>
     <div class="gi" onclick="openLb(16)"><img src="IMG_9052.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="סלון" data-en="Lounge" data-ar="صالون">סלון</span></div></div>
     <div class="gi" onclick="openLb(17)"><img src="IMG_9038.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="חצר" data-en="Courtyard" data-ar="ساحة">חצר</span></div></div>
-    <div class="gi" onclick="openLb(18)"><img src="IMG_9065.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="תמונה 19" data-en="Photo 19" data-ar="صورة ١٩">תמונה 19</span></div></div>
-    <div class="gi" onclick="openLb(19)"><img src="IMG_9066.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="תמונה 20" data-en="Photo 20" data-ar="صورة ٢٠">תמונה 20</span></div></div>
+
   </div>
 </section>
 <div class="dv"></div>
@@ -552,7 +551,7 @@ const ro=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.targe
 document.querySelectorAll('.rev').forEach(el=>ro.observe(el));
 
 // LIGHTBOX
-const imgs=['IMG_9049.jpeg','IMG_9044.jpeg','IMG_9045.jpeg','IMG_9043.jpeg','IMG_9050.jpeg','IMG_9051.jpeg','IMG_9047.jpeg','IMG_9053.jpeg','IMG_9037.jpeg','IMG_9041.jpeg','IMG_9048.jpeg','IMG_9042.jpeg','IMG_9046.jpeg','IMG_9039.jpeg','IMG_9040.jpeg','IMG_9036.jpeg','IMG_9052.jpeg','IMG_9038.jpeg','IMG_9065.jpeg','IMG_9066.jpeg'];
+const imgs=['IMG_9049.jpeg','IMG_9044.jpeg','IMG_9045.jpeg','IMG_9043.jpeg','IMG_9050.jpeg','IMG_9051.jpeg','IMG_9047.jpeg','IMG_9053.jpeg','IMG_9037.jpeg','IMG_9041.jpeg','IMG_9048.jpeg','IMG_9042.jpeg','IMG_9046.jpeg','IMG_9039.jpeg','IMG_9040.jpeg','IMG_9036.jpeg','IMG_9052.jpeg','IMG_9038.jpeg'];
 let lbi=0;
 function openLb(i){lbi=i;document.getElementById('lbImg').src=imgs[i];document.getElementById('lbCnt').textContent=(i+1)+' / '+imgs.length;document.getElementById('lb').classList.add('open')}
 function closeLb(){document.getElementById('lb').classList.remove('open')}
