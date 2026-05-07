@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Daniel's Villa &amp; Spa</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,27 +14,25 @@
       --gold2:#d4af7a;
       --gold3:#e8d5b0;
 
-      --bg-dark:#0b0b0b;
-      --bg-dark-2:#111111;
-      --bg-dark-3:#161616;
-      --bg-dark-4:#1c1c1c;
+      --bg:#f7f4ee;
+      --bg2:#f1eadf;
+      --bg3:#ece3d4;
+      --bg4:#e6dccb;
 
-      --bg-light:#f5f1e8;
-      --bg-light-2:#efe8dc;
-      --bg-light-3:#e7dfd1;
-
-      --text-light:#ece6dc;
-      --text-dark:#171717;
-      --muted-light:#a29a8d;
-      --muted-dark:#5f5a52;
+      --dark:#171717;
+      --dark2:#232323;
+      --muted:#6a6258;
+      --muted2:#80776b;
+      --line:rgba(184,147,90,.16);
+      --line2:rgba(184,147,90,.09);
     }
 
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{
       font-family:'Frank Ruhl Libre',serif;
-      background:var(--bg-light);
-      color:var(--text-dark);
+      background:var(--bg);
+      color:var(--dark);
       overflow-x:hidden;
       direction:rtl;
       min-height:100%;
@@ -48,7 +46,7 @@
       inset:0;
       background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
       pointer-events:none;
-      opacity:.10;
+      opacity:.12;
       z-index:9990;
     }
 
@@ -59,17 +57,18 @@
       z-index:2000;
       display:flex;
       gap:4px;
-      background:rgba(11,11,11,.92);
+      background:rgba(255,255,255,.82);
       backdrop-filter:blur(14px);
-      border:1px solid rgba(184,147,90,.2);
+      border:1px solid var(--line);
       padding:4px 8px;
       border-radius:26px;
+      box-shadow:0 8px 24px rgba(0,0,0,.05);
     }
     body.lang-en .lsw{left:auto;right:18px}
     .lbtn{
       background:none;
       border:none;
-      color:var(--muted-light);
+      color:var(--muted);
       font-size:11px;
       letter-spacing:1px;
       padding:5px 10px;
@@ -80,10 +79,10 @@
     }
     .lbtn.active{
       background:var(--gold);
-      color:var(--bg-dark);
+      color:#fff;
       font-weight:500;
     }
-    .lbtn:hover:not(.active){color:var(--gold2)}
+    .lbtn:hover:not(.active){color:var(--gold)}
 
     .wa{
       position:fixed;
@@ -98,18 +97,18 @@
       padding:11px 16px 11px 13px;
       border-radius:50px;
       text-decoration:none;
-      box-shadow:0 6px 24px rgba(37,211,102,.35);
+      box-shadow:0 6px 24px rgba(37,211,102,.28);
       transition:.3s;
       animation:wap 3s ease-in-out infinite;
     }
     .wa:hover{
       transform:translateY(-3px) scale(1.03);
       animation:none;
-      box-shadow:0 12px 34px rgba(37,211,102,.45);
+      box-shadow:0 12px 34px rgba(37,211,102,.38);
     }
     @keyframes wap{
-      0%,100%{box-shadow:0 6px 24px rgba(37,211,102,.35)}
-      50%{box-shadow:0 6px 34px rgba(37,211,102,.55)}
+      0%,100%{box-shadow:0 6px 24px rgba(37,211,102,.28)}
+      50%{box-shadow:0 6px 34px rgba(37,211,102,.44)}
     }
     .wa svg{width:22px;height:22px;flex-shrink:0}
     .wa-t{font-size:11px;font-weight:500;white-space:nowrap}
@@ -124,15 +123,16 @@
       justify-content:space-between;
       align-items:center;
       z-index:1000;
-      background:rgba(11,11,11,.18);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid rgba(184,147,90,.08);
+      background:rgba(255,255,255,.72);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line2);
       transition:.4s;
     }
     nav.sc{
-      background:rgba(11,11,11,.95);
+      background:rgba(255,255,255,.96);
       padding:13px 60px;
-      border-bottom-color:rgba(184,147,90,.15);
+      border-bottom-color:var(--line);
+      box-shadow:0 10px 24px rgba(0,0,0,.04);
     }
     .nl{
       text-decoration:none;
@@ -145,14 +145,14 @@
       font-size:19px;
       letter-spacing:4px;
       text-transform:uppercase;
-      color:var(--gold2);
+      color:var(--gold);
       font-weight:400;
     }
     .nls{
       font-size:9px;
       letter-spacing:4px;
       text-transform:uppercase;
-      color:var(--muted-light);
+      color:var(--muted);
     }
     nav ul{
       list-style:none;
@@ -161,7 +161,7 @@
       align-items:center;
     }
     nav ul a{
-      color:var(--muted-light);
+      color:var(--muted);
       text-decoration:none;
       font-size:10px;
       letter-spacing:2px;
@@ -180,7 +180,7 @@
       transition:.3s;
     }
     body.lang-en nav ul a::after{right:auto;left:0}
-    nav ul a:hover{color:var(--gold2)}
+    nav ul a:hover{color:var(--gold)}
     nav ul a:hover::after{width:100%}
     .ncta{
       padding:8px 18px !important;
@@ -190,7 +190,7 @@
     }
     .ncta:hover{
       background:var(--gold) !important;
-      color:var(--bg-dark) !important;
+      color:#fff !important;
     }
     .ncta::after{display:none !important}
 
@@ -201,13 +201,13 @@
       align-items:flex-end;
       padding:0 60px 58px;
       overflow:hidden;
-      background:var(--bg-dark);
-      color:var(--text-light);
+      background:linear-gradient(155deg,#f8f3ea,#efe6d8 45%,#f7f4ee);
+      color:var(--dark);
     }
     .hbg{
       position:absolute;
       inset:0;
-      background:linear-gradient(155deg,#17100a,#0b0b0b 45%,#091015);
+      background:linear-gradient(155deg,#f8f3ea,#efe6d8 45%,#f7f4ee);
       z-index:0;
     }
     .hslides{position:absolute;inset:0;z-index:1}
@@ -219,9 +219,10 @@
       opacity:0;
       transition:opacity 1.5s;
       transform:scale(1.05);
+      filter:saturate(.95) contrast(1.02);
     }
     .hs.on{
-      opacity:.24;
+      opacity:.16;
       animation:hz 20s ease-in-out infinite alternate;
     }
     @keyframes hz{
@@ -231,7 +232,7 @@
     .hov{
       position:absolute;
       inset:0;
-      background:linear-gradient(to top,rgba(11,11,11,.97) 0%,rgba(11,11,11,.34) 52%,rgba(11,11,11,.54) 100%);
+      background:linear-gradient(to top,rgba(247,244,238,.96) 0%,rgba(247,244,238,.33) 52%,rgba(247,244,238,.08) 100%);
       z-index:2;
     }
     .hc{
@@ -262,18 +263,18 @@
       font-size:clamp(44px,7vw,84px);
       font-weight:300;
       line-height:1.05;
-      color:#fff;
+      color:var(--dark);
       margin-bottom:14px;
     }
     .hero h1 em{
       font-style:italic;
-      color:var(--gold2);
+      color:var(--gold);
     }
     .hdesc{
       max-width:540px;
       font-size:14px;
       line-height:2.05;
-      color:var(--muted-light);
+      color:var(--muted);
       margin-bottom:34px;
     }
     .hbtns{
@@ -292,7 +293,7 @@
     }
     .bp{
       background:var(--gold);
-      color:var(--bg-dark);
+      color:#fff;
       font-weight:500;
     }
     .bp:hover{
@@ -301,28 +302,24 @@
     }
     .bg{
       border:1px solid rgba(184,147,90,.38);
-      color:var(--gold3);
+      color:var(--dark);
+      background:rgba(255,255,255,.34);
     }
     .bg:hover{
       border-color:var(--gold);
-      color:var(--gold2);
+      color:var(--gold);
     }
 
     .dv{
       height:1px;
       background:linear-gradient(to right,transparent,var(--gold),transparent);
-      opacity:.18;
+      opacity:.22;
     }
 
-    .sec{padding:110px 60px}
-    .dark-sec{
-      background:var(--bg-dark);
-      color:var(--text-light);
-    }
-    .light-sec{
-      background:var(--bg-light);
-      color:var(--text-dark);
-    }
+    .sec{padding:104px 60px}
+    .sec-alt{background:var(--bg2)}
+    .sec-base{background:var(--bg)}
+    .sec-deep{background:var(--bg3)}
 
     .sl{
       display:flex;
@@ -357,6 +354,7 @@
       height:490px;
       object-fit:cover;
       display:block;
+      filter:saturate(.96) contrast(1.02);
     }
     .aima{
       position:absolute;
@@ -365,8 +363,9 @@
       object-fit:cover;
       right:-20px;
       bottom:-22px;
-      border:4px solid var(--bg-dark);
-      box-shadow:0 16px 36px rgba(0,0,0,.5);
+      border:4px solid var(--bg);
+      box-shadow:0 16px 36px rgba(0,0,0,.12);
+      filter:saturate(.96) contrast(1.02);
     }
     body.lang-en .aima{right:-20px;left:auto}
     .aright h2{
@@ -375,14 +374,14 @@
       font-weight:300;
       line-height:1.15;
       margin-bottom:18px;
-      color:#fff;
+      color:var(--dark);
     }
     .aright h2 em{
       font-style:italic;
-      color:var(--gold2);
+      color:var(--gold);
     }
     .aright p{
-      color:var(--muted-light);
+      color:var(--muted);
       font-size:14px;
       line-height:2.1;
       margin-bottom:13px;
@@ -395,17 +394,18 @@
     }
     .afeat{
       padding:15px;
-      background:rgba(255,255,255,.02);
-      border-right:2px solid rgba(184,147,90,.2);
+      background:#fff;
+      border-right:2px solid rgba(184,147,90,.18);
       transition:.3s;
+      box-shadow:0 10px 24px rgba(0,0,0,.04);
     }
     body.lang-en .afeat{
       border-right:none;
-      border-left:2px solid rgba(184,147,90,.2);
+      border-left:2px solid rgba(184,147,90,.18);
     }
     .afeat:hover{border-color:var(--gold)}
     .afeat h4{
-      color:var(--gold2);
+      color:var(--gold);
       font-size:10px;
       letter-spacing:2px;
       text-transform:uppercase;
@@ -415,7 +415,7 @@
       margin:0;
       font-size:12px;
       line-height:1.7;
-      color:var(--muted-light);
+      color:var(--muted);
     }
 
     .light-sec h2,
@@ -431,12 +431,12 @@
     }
 
     .pool-sec h2{
-      color:var(--text-dark);
+      color:var(--dark);
       margin-bottom:14px;
     }
-    .pool-sec h2 em{font-style:italic;color:var(--gold2)}
+    .pool-sec h2 em{font-style:italic;color:var(--gold)}
     .pool-sec>p{
-      color:var(--muted-dark);
+      color:var(--muted);
       font-size:14px;
       line-height:2;
       margin-bottom:44px;
@@ -458,7 +458,8 @@
       overflow:hidden;
       cursor:zoom-in;
       line-height:0;
-      background:#000;
+      background:#fff;
+      box-shadow:0 10px 24px rgba(0,0,0,.04);
     }
     .pg-item img{
       width:100%;
@@ -466,12 +467,13 @@
       object-fit:cover;
       display:block;
       transition:transform .7s ease;
+      filter:saturate(.96) contrast(1.02);
     }
     .pg-item:hover img{transform:scale(1.06)}
     .pg-ov{
       position:absolute;
       inset:0;
-      background:linear-gradient(to top,rgba(0,0,0,.7) 0%,transparent 55%);
+      background:linear-gradient(to top,rgba(0,0,0,.66) 0%,transparent 55%);
       opacity:0;
       transition:.35s;
       display:flex;
@@ -487,12 +489,12 @@
     }
 
     .rooms-sec h2{
-      color:var(--text-dark);
+      color:var(--dark);
       margin-bottom:14px;
     }
-    .rooms-sec h2 em{font-style:italic;color:var(--gold2)}
+    .rooms-sec h2 em{font-style:italic;color:var(--gold)}
     .rooms-sec>p{
-      color:var(--muted-dark);
+      color:var(--muted);
       font-size:14px;
       line-height:2;
       margin-bottom:44px;
@@ -507,7 +509,8 @@
       position:relative;
       overflow:hidden;
       cursor:zoom-in;
-      background:#000;
+      background:#fff;
+      box-shadow:0 10px 24px rgba(0,0,0,.04);
     }
     .room-card img{
       width:100%;
@@ -515,6 +518,7 @@
       object-fit:cover;
       display:block;
       transition:transform .7s ease;
+      filter:saturate(.96) contrast(1.02);
     }
     .room-card:hover img{transform:scale(1.06)}
     .room-ov{
@@ -522,7 +526,7 @@
       bottom:0;
       left:0;
       right:0;
-      background:linear-gradient(to top,rgba(0,0,0,.82) 0%,transparent 100%);
+      background:linear-gradient(to top,rgba(0,0,0,.78) 0%,transparent 100%);
       padding:18px 16px 16px;
       transform:translateY(8px);
       opacity:0;
@@ -541,7 +545,7 @@
     .rsub{
       font-size:9px;
       letter-spacing:2px;
-      color:var(--gold2);
+      color:var(--gold3);
       text-transform:uppercase;
     }
 
@@ -551,12 +555,10 @@
       align-items:flex-end;
       margin-bottom:40px;
     }
-    .gal-head h2{
-      color:var(--text-dark);
-    }
-    .gal-head h2 em{font-style:italic;color:var(--gold2)}
+    .gal-head h2{color:var(--dark)}
+    .gal-head h2 em{font-style:italic;color:var(--gold)}
     .gcnt{
-      color:var(--muted-dark);
+      color:var(--muted);
       font-size:10px;
       letter-spacing:3px;
       text-transform:uppercase;
@@ -571,7 +573,8 @@
       overflow:hidden;
       aspect-ratio:4/3;
       cursor:zoom-in;
-      background:#000;
+      background:#fff;
+      box-shadow:0 10px 24px rgba(0,0,0,.04);
     }
     .gi img{
       width:100%;
@@ -579,12 +582,13 @@
       object-fit:cover;
       display:block;
       transition:transform .65s ease;
+      filter:saturate(.96) contrast(1.02);
     }
     .gi:hover img{transform:scale(1.06)}
     .gov{
       position:absolute;
       inset:0;
-      background:linear-gradient(to top,rgba(0,0,0,.72) 0%,transparent 55%);
+      background:linear-gradient(to top,rgba(0,0,0,.68) 0%,transparent 55%);
       opacity:0;
       transition:.32s;
       display:flex;
@@ -600,10 +604,10 @@
     }
 
     .fh h2{
-      color:var(--text-dark);
+      color:var(--dark);
       margin-bottom:48px;
     }
-    .fh h2 em{font-style:italic;color:var(--gold2)}
+    .fh h2 em{font-style:italic;color:var(--gold)}
     .fgrid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -615,7 +619,7 @@
       position:relative;
       overflow:hidden;
       transition:.4s;
-      border:1px solid rgba(184,147,90,.12);
+      border:1px solid var(--line2);
       box-shadow:0 12px 30px rgba(0,0,0,.04);
       display:flex;
       flex-direction:column;
@@ -639,14 +643,14 @@
       background:linear-gradient(to right,var(--gold),transparent);
     }
     .fc:hover{
-      background:var(--bg-light-3);
+      background:var(--bg4);
     }
     .fc:hover::before{transform:scaleX(1)}
     .fnum{
       font-family:'Cormorant Garamond',serif;
       font-size:50px;
       font-weight:300;
-      color:rgba(184,147,90,.15);
+      color:rgba(184,147,90,.16);
       line-height:1;
       margin-bottom:14px;
       transition:.4s;
@@ -666,12 +670,12 @@
     .fc p{
       font-size:12px;
       line-height:1.9;
-      color:var(--muted-dark);
+      color:var(--muted);
     }
 
     .quote{
-      background:var(--gold);
-      color:#161616;
+      background:linear-gradient(135deg,var(--gold),var(--gold2));
+      color:#fff;
       text-align:center;
       padding:70px 60px;
       position:relative;
@@ -681,7 +685,7 @@
       content:'"';
       font-family:'Cormorant Garamond',serif;
       font-size:340px;
-      color:rgba(0,0,0,.06);
+      color:rgba(255,255,255,.10);
       position:absolute;
       top:-50px;
       left:50%;
@@ -703,7 +707,7 @@
       font-size:10px;
       letter-spacing:4px;
       text-transform:uppercase;
-      color:rgba(22,22,22,.45);
+      color:rgba(255,255,255,.78);
     }
 
     .cg{
@@ -713,12 +717,12 @@
       align-items:center;
     }
     .cleft h2{
-      color:var(--text-dark);
+      color:var(--dark);
       margin-bottom:16px;
     }
-    .cleft h2 em{font-style:italic;color:var(--gold2)}
+    .cleft h2 em{font-style:italic;color:var(--gold)}
     .cleft>p{
-      color:var(--muted-dark);
+      color:var(--muted);
       font-size:14px;
       line-height:2;
       margin-bottom:36px;
@@ -732,7 +736,7 @@
       align-items:center;
       gap:16px;
       padding:18px 0;
-      border-bottom:1px solid rgba(184,147,90,.12);
+      border-bottom:1px solid var(--line2);
       text-decoration:none;
       color:inherit;
       transition:.3s;
@@ -750,15 +754,17 @@
       display:flex;
       align-items:center;
       justify-content:center;
-      border:1px solid rgba(184,147,90,.28);
+      border:1px solid rgba(184,147,90,.26);
       flex-shrink:0;
       transition:.3s;
       font-size:15px;
       background:#fff;
+      box-shadow:0 10px 20px rgba(0,0,0,.03);
     }
     .ci:hover .cico{
       background:var(--gold);
       border-color:var(--gold);
+      color:#fff;
     }
     .clbl{
       display:block;
@@ -769,7 +775,7 @@
       margin-bottom:3px;
     }
     .cval{
-      color:var(--text-dark);
+      color:var(--dark);
       font-size:13px;
     }
     .cright{
@@ -782,6 +788,7 @@
       object-fit:cover;
       display:block;
       box-shadow:0 18px 40px rgba(0,0,0,.08);
+      filter:saturate(.96) contrast(1.02);
     }
     .cimga{
       position:absolute;
@@ -790,8 +797,9 @@
       object-fit:cover;
       left:-22px;
       bottom:-22px;
-      border:4px solid var(--bg-light);
-      box-shadow:0 16px 36px rgba(0,0,0,.24);
+      border:4px solid var(--bg);
+      box-shadow:0 16px 36px rgba(0,0,0,.18);
+      filter:saturate(.96) contrast(1.02);
     }
     body.lang-en .cimga{left:-22px;right:auto}
 
@@ -800,25 +808,26 @@
       justify-content:center;
       gap:12px;
       padding:40px 60px 0;
-      background:var(--bg-light);
+      background:var(--bg);
     }
     .socl{
       width:44px;
       height:44px;
-      border:1px solid rgba(184,147,90,.26);
+      border:1px solid rgba(184,147,90,.20);
       border-radius:50%;
       display:flex;
       align-items:center;
       justify-content:center;
       text-decoration:none;
-      color:var(--muted-dark);
+      color:var(--muted);
       transition:.28s;
       background:#fff;
+      box-shadow:0 10px 20px rgba(0,0,0,.03);
     }
     .socl:hover{
       background:var(--gold);
       border-color:var(--gold);
-      color:var(--bg-dark);
+      color:#fff;
       transform:translateY(-3px);
     }
     .ig-l{font-size:0}
@@ -826,12 +835,12 @@
 
     .mapsec{
       height:340px;
-      background:var(--bg-light-2);
+      background:var(--bg2);
       position:relative;
       overflow:hidden;
       margin-top:40px;
-      border-top:1px solid rgba(184,147,90,.12);
-      border-bottom:1px solid rgba(184,147,90,.12);
+      border-top:1px solid var(--line2);
+      border-bottom:1px solid var(--line2);
     }
     .mapsec iframe{
       width:100%;
@@ -843,7 +852,7 @@
     .mapov{
       position:absolute;
       inset:0;
-      background:linear-gradient(to right,var(--bg-light) 0%,transparent 22%,transparent 78%,var(--bg-light) 100%);
+      background:linear-gradient(to right,var(--bg) 0%,transparent 22%,transparent 78%,var(--bg) 100%);
       pointer-events:none;
     }
     .mappin{
@@ -881,19 +890,19 @@
       gap:16px;
       flex-wrap:wrap;
       padding:44px 60px;
-      background:#000;
-      border-top:1px solid rgba(184,147,90,.13);
-      color:var(--text-light);
+      background:#fff;
+      border-top:1px solid var(--line2);
+      color:var(--dark);
     }
     .flogo{
       font-family:'Cormorant Garamond',serif;
       font-size:20px;
       letter-spacing:4px;
-      color:var(--gold2);
+      color:var(--gold);
       text-transform:uppercase;
     }
     .fcopy{
-      color:var(--muted-light);
+      color:var(--muted);
       font-size:11px;
     }
     .fcopy span{color:var(--gold)}
@@ -903,7 +912,7 @@
       flex-wrap:wrap;
     }
     .flinks a{
-      color:var(--muted-light);
+      color:var(--muted);
       text-decoration:none;
       font-size:10px;
       letter-spacing:2px;
@@ -916,7 +925,7 @@
       display:none;
       position:fixed;
       inset:0;
-      background:rgba(0,0,0,.96);
+      background:rgba(255,255,255,.96);
       z-index:9999;
       align-items:center;
       justify-content:center;
@@ -926,8 +935,9 @@
       max-width:90vw;
       max-height:88vh;
       object-fit:contain;
-      border:1px solid rgba(184,147,90,.15);
-      background:#000;
+      border:1px solid var(--line);
+      background:#fff;
+      box-shadow:0 14px 36px rgba(0,0,0,.08);
     }
     .lbx{
       position:absolute;
@@ -935,7 +945,7 @@
       right:24px;
       background:none;
       border:none;
-      color:var(--gold2);
+      color:var(--gold);
       font-size:30px;
       cursor:pointer;
       z-index:10000;
@@ -945,9 +955,9 @@
       position:absolute;
       top:50%;
       transform:translateY(-50%);
-      background:rgba(184,147,90,.14);
-      border:1px solid rgba(184,147,90,.28);
-      color:var(--gold2);
+      background:rgba(184,147,90,.10);
+      border:1px solid rgba(184,147,90,.22);
+      color:var(--gold);
       font-size:22px;
       padding:13px 17px;
       cursor:pointer;
@@ -956,7 +966,7 @@
     }
     .lbp{left:18px}
     .lbn{right:18px}
-    .lbp:hover,.lbn:hover{background:rgba(184,147,90,.28)}
+    .lbp:hover,.lbn:hover{background:rgba(184,147,90,.20)}
     .lbcnt{
       position:absolute;
       bottom:22px;
@@ -964,7 +974,7 @@
       transform:translateX(-50%);
       font-size:10px;
       letter-spacing:3px;
-      color:var(--muted-light);
+      color:var(--muted);
       text-transform:uppercase;
     }
 
@@ -1059,7 +1069,7 @@
     <div class="hov"></div>
     <div class="hc">
       <div class="heye" data-he="ברוכים הבאים · עוספיה, הר הכרמל" data-en="Welcome · Isfiya, Mount Carmel" data-ar="أهلاً بكم · عسفيا، جبل الكرمل">ברוכים הבאים · עוספיה, הר הכרמל</div>
-      <h1 data-he="דניאל'ס<br><em>וילה וספא</em>" data-en="Daniel's<br><em>Villa &amp; Spa</em>" data-ar="<em>فيلا</em><br>دانيالز וسبا">דניאל'ס<br><em>וילה וספא</em></h1>
+      <h1 data-he="דניאל'ס<br><em>וילה וספא</em>" data-en="Daniel's<br><em>Villa &amp; Spa</em>" data-ar="<em>فيلا</em><br>دانيالز وسبا">דניאל'ס<br><em>וילה וספא</em></h1>
       <p class="hdesc" data-he="וילה מעוצבת ומרגיעה עם מתחם ספא מקורה, בריכה מחוממת, ג'קוזי וסאונה — חוויה בלתי נשכחת בלב עוספיה." data-en="A beautifully designed villa with an indoor spa complex, heated pool, jacuzzi and sauna — an unforgettable experience in the heart of Isfiya." data-ar="فيلا مصممة بشكل رائع مع مجمع سبا داخلي ومسبح مدفأ وجاكوزي وساونا — تجربة لا تُنسى في قلب عسفيا.">וילה מעוצבת ומרגיעה עם מתחם ספא מקורה, בריכה מחוממת, ג'קוזי וסאונה — חוויה בלתי נשכחת בלב עוספיה.</p>
       <div class="hbtns">
         <a href="#pool" class="bp" data-he="גלו את הספא" data-en="Explore the Spa" data-ar="استكشف السبا">גלו את הספא</a>
@@ -1070,11 +1080,11 @@
 
   <div class="dv"></div>
 
-  <section class="sec dark-sec" id="about">
+  <section class="sec sec-base" id="about">
     <div class="ag">
       <div class="aleft rev">
-        <img src="IMG_9036.jpeg" alt="Villa" class="aim"/>
-        <img src="IMG_9038.jpeg" alt="Garden" class="aima"/>
+        <img src="IMG_9036.jpeg" alt="Villa" class="aim" />
+        <img src="IMG_9038.jpeg" alt="Garden" class="aima" />
       </div>
       <div class="aright">
         <div class="sl rev" data-he="הסיפור שלנו" data-en="Our Story" data-ar="قصتنا">הסיפור שלנו</div>
@@ -1105,41 +1115,41 @@
 
   <div class="dv"></div>
 
-  <section class="sec light-sec pool-sec" id="pool">
+  <section class="sec sec-alt pool-sec" id="pool">
     <div class="sl rev" data-he="מתחם הבריכה והספא" data-en="Pool & Spa Complex" data-ar="مجمع المسبح والسبا">מתחם הבריכה והספא</div>
     <h2 class="rev rd1" data-he="<em>בריכה</em> מחוממת,<br>ג'קוזי וסאונה" data-en="<em>Heated Pool</em>,<br>Jacuzzi & Sauna" data-ar="<em>مسبح</em> مدفأ<br>وجاكوزي وساونا"><em>בריכה</em> מחוממת,<br>ג'קוזי וסאונה</h2>
     <p class="rev rd2" data-he="מתחם ספא מקורה ומפנק הכולל בריכת שחייה מחוממת, ג'קוזי טיפולי רב-מושבי, סאונה יבשה, מקלחת ושירותים נפרדים." data-en="A luxurious indoor spa complex featuring a heated swimming pool, multi-seat therapeutic jacuzzi, dry sauna, separate shower and restrooms." data-ar="مجمع سبا داخلي فاخر يضم مسبح سباحة مدفأ وجاكوزي علاجي متعدد المقاعد وساونا جافة ودش منفصل ومراحيض.">מתחם ספא מקורה ומפנק הכולל בריכת שחייה מחוממת, ג'קוזי טיפולי רב-מושבי, סאונה יבשה, מקלחת ושירותים נפרדים.</p>
 
     <div class="pool-grid rev">
       <div class="pg-item" style="height:260px" onclick="openLb(0)">
-        <img src="IMG_9049.jpeg" alt="Pool"/>
+        <img src="IMG_9049.jpeg" alt="Pool" />
         <div class="pg-ov"><span class="pglbl" data-he="בריכה פנימית" data-en="Indoor Pool" data-ar="مسبح داخلي">בריכה פנימית</span></div>
       </div>
       <div class="pg-item" style="height:260px" onclick="openLb(1)">
-        <img src="IMG_9044.jpeg" alt="Jacuzzi"/>
+        <img src="IMG_9044.jpeg" alt="Jacuzzi" />
         <div class="pg-ov"><span class="pglbl" data-he="ג'קוזי" data-en="Jacuzzi" data-ar="جاكوزي">ג'קוזי</span></div>
       </div>
       <div class="pg-item" style="height:260px" onclick="openLb(2)">
-        <img src="IMG_9045.jpeg" alt="Spa overview"/>
+        <img src="IMG_9045.jpeg" alt="Spa overview" />
         <div class="pg-ov"><span class="pglbl" data-he="מתחם הספא" data-en="Spa Complex" data-ar="مجمع السبا">מתחם הספא</span></div>
       </div>
       <div class="pg-item" style="height:260px" onclick="openLb(3)">
-        <img src="IMG_9043.jpeg" alt="Sauna"/>
+        <img src="IMG_9043.jpeg" alt="Sauna" />
         <div class="pg-ov"><span class="pglbl" data-he="סאונה" data-en="Sauna" data-ar="ساونا">סאונה</span></div>
       </div>
     </div>
 
     <div class="pool-grid-2 rev" style="margin-top:8px">
       <div class="pg-item" style="height:240px" onclick="openLb(4)">
-        <img src="IMG_9050.jpeg" alt="Pool view"/>
+        <img src="IMG_9050.jpeg" alt="Pool view" />
         <div class="pg-ov"><span class="pglbl" data-he="נוף הבריכה" data-en="Pool View" data-ar="منظر المسبح">נוף הבריכה</span></div>
       </div>
       <div class="pg-item" style="height:240px" onclick="openLb(5)">
-        <img src="IMG_9051.jpeg" alt="Pool outdoor"/>
+        <img src="IMG_9051.jpeg" alt="Pool outdoor" />
         <div class="pg-ov"><span class="pglbl" data-he="חצר הבריכה" data-en="Pool Yard" data-ar="ساحة المسبح">חצר הבריכה</span></div>
       </div>
       <div class="pg-item" style="height:240px" onclick="openLb(6)">
-        <img src="IMG_9047.jpeg" alt="Spa amenities"/>
+        <img src="IMG_9047.jpeg" alt="Spa amenities" />
         <div class="pg-ov"><span class="pglbl" data-he="פינוקי הספא" data-en="Spa Amenities" data-ar="مميزات السبا">פינוקי הספא</span></div>
       </div>
     </div>
@@ -1147,27 +1157,27 @@
 
   <div class="dv"></div>
 
-  <section class="sec light-sec rooms-sec" id="rooms">
+  <section class="sec sec-base rooms-sec" id="rooms">
     <div class="sl rev" data-he="חדרי השינה" data-en="Bedrooms" data-ar="غرف النوم">חדרי השינה</div>
     <h2 class="rev rd1" data-he="<em>חדרים</em><br>מעוצבים בסגנון ייחודי" data-en="<em>Rooms</em><br>with Unique Character" data-ar="<em>غرف</em><br>بطابع فريد"><em>חדרים</em><br>מעוצבים בסגנון ייחודי</h2>
     <p class="rev rd2" data-he="כל חדר מעוצב בסגנון ייחודי — מהסגנון הבוהמי החמים ועד הקלאסי המפואר והנאוטי הים תיכוני. כל החדרים כוללים מיזוג אוויר וטלוויזיה חכמה." data-en="Each room is uniquely designed — from the warm bohemian style to the grand classic and fresh nautical Mediterranean. All rooms include air conditioning and smart TV." data-ar="كل غرفة مصممة بأسلوب فريد — من الطراز البوهيمي الدافئ إلى الكلاسيكي الفخم والبحري المتوسطي. جميع الغرف تشمل تكييف وتلفزيون ذكي.">כל חדר מעוצב בסגנון ייחודי — מהסגנון הבוהמי החמים ועד הקלאסי המפואר והנאוטי הים תיכוני. כל החדרים כוללים מיזוג אוויר וטלוויזיה חכמה.</p>
     <div class="rooms-grid">
       <div class="room-card rev" onclick="openLb(7)">
-        <img src="IMG_9053.jpeg" alt="Boho Room"/>
+        <img src="IMG_9053.jpeg" alt="Boho Room" />
         <div class="room-ov">
           <div class="rtitle" data-he="חדר בוהמי" data-en="Boho Room" data-ar="غرفة بوهيمية">חדר בוהמי</div>
           <div class="rsub" data-he="קסם טבעי וחמים" data-en="Warm Natural Charm" data-ar="سحر طبيعي دافئ">קסם טבעי וחמים</div>
         </div>
       </div>
       <div class="room-card rev rd1" onclick="openLb(8)">
-        <img src="IMG_9037.jpeg" alt="Classic Room"/>
+        <img src="IMG_9037.jpeg" alt="Classic Room" />
         <div class="room-ov">
           <div class="rtitle" data-he="חדר קלאסי" data-en="Classic Room" data-ar="غرفة كلاسيكية">חדר קלאסי</div>
           <div class="rsub" data-he="מיטת עמודים מפוארת" data-en="Grand Four-Poster Bed" data-ar="سرير كلاسيكي فاخر">מיטת עמודים מפוארת</div>
         </div>
       </div>
       <div class="room-card rev rd2" onclick="openLb(9)">
-        <img src="IMG_9041.jpeg" alt="Nautical Room"/>
+        <img src="IMG_9041.jpeg" alt="Nautical Room" />
         <div class="room-ov">
           <div class="rtitle" data-he="חדר ים תיכוני" data-en="Mediterranean Room" data-ar="غرفة متوسطية">חדר ים תיכוני</div>
           <div class="rsub" data-he="עיצוב נאוטי ורענן" data-en="Fresh Nautical Design" data-ar="تصميم بحري منعش">עיצוב נאוטי ורענן</div>
@@ -1178,7 +1188,7 @@
 
   <div class="dv"></div>
 
-  <section class="sec light-sec" id="gallery">
+  <section class="sec sec-alt" id="gallery">
     <div class="gal-head rev">
       <div>
         <div class="sl" data-he="כל הצילומים" data-en="All Photos" data-ar="جميع الصور">כל הצילומים</div>
@@ -1215,7 +1225,7 @@
 
   <div class="dv"></div>
 
-  <section class="sec light-sec" id="features">
+  <section class="sec sec-base features-sec" id="features">
     <div class="fh">
       <div class="sl rev" data-he="מה כלול" data-en="What's Included" data-ar="ما يشمله">מה כלול</div>
       <h2 class="rev rd1" data-he="ה<em>חוויה</em><br>שמגיעה לכם" data-en="The <em>Experience</em><br>You Deserve" data-ar="<em>التجربة</em><br>التي تستحقونها">ה<em>חוויה</em><br>שמגיעה לכם</h2>
@@ -1264,7 +1274,7 @@
     <cite data-he="— דניאל'ס וילה וספא · עוספיה" data-en="— Daniel's Villa & Spa · Isfiya" data-ar="— فيلا دانيالز وسبا · عسفيا">— דניאל'ס וילה וספא · עוספיה</cite>
   </div>
 
-  <section class="sec light-sec" id="contact">
+  <section class="sec sec-alt" id="contact">
     <div class="cg">
       <div class="cleft">
         <div class="sl rev" data-he="צרו קשר" data-en="Contact Us" data-ar="تواصل معنا">צרו קשר</div>
@@ -1307,8 +1317,8 @@
       </div>
 
       <div class="cright rev rd2">
-        <img src="IMG_9044.jpeg" alt="Villa" class="cimg"/>
-        <img src="IMG_9047.jpeg" alt="Spa" class="cimga"/>
+        <img src="IMG_9044.jpeg" alt="Villa" class="cimg" />
+        <img src="IMG_9047.jpeg" alt="Spa" class="cimga" />
       </div>
     </div>
   </section>
@@ -1328,12 +1338,12 @@
         <circle cx="17.5" cy="6.5" r="1.2" fill="url(#ig)"/>
       </svg>
     </a>
-    <a href="https://wa.me/972527070100" target="_blank" class="socl" title="WhatsApp" style="color:#25D366;border-color:rgba(37,211,102,.28)">
+    <a href="https://wa.me/972527070100" target="_blank" class="socl" title="WhatsApp" style="color:#25D366;border-color:rgba(37,211,102,.22)">
       <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
         <path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.37 5.07L2 22l5.1-1.34A9.93 9.93 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm4.2 13.8c-.18.5-1.06.96-1.47 1.02-.37.05-.84.07-1.35-.09-.31-.09-.71-.22-1.22-.43-2.14-.92-3.54-3.07-3.65-3.21-.1-.14-.84-1.12-.84-2.13 0-1.01.52-1.5.72-1.71.18-.2.4-.25.53-.25.13 0 .27 0 .38.01.12.01.3-.05.46.36.18.42.6 1.47.65 1.58.06.1.09.22.02.36-.07.14-.1.22-.2.34l-.3.35c-.1.1-.2.21-.09.41.12.2.52.86 1.11 1.39.77.68 1.41.89 1.61.99.2.1.32.08.44-.05.12-.13.5-.58.63-.78.14-.2.27-.17.45-.1.18.07 1.16.55 1.36.65.2.1.33.15.38.23.05.08.05.47-.13.97z"/>
       </svg>
     </a>
-    <a href="tel:+972527070100" class="socl" title="Call" style="color:var(--gold);border-color:rgba(184,147,90,.28)">📞</a>
+    <a href="tel:+972527070100" class="socl" title="Call" style="color:var(--gold);border-color:rgba(184,147,90,.22)">📞</a>
   </div>
 
   <div class="mapsec">
@@ -1360,7 +1370,7 @@
   <div class="lb" id="lb">
     <button class="lbx" onclick="closeLb()">✕</button>
     <button class="lbp" onclick="lbNav(-1)">‹</button>
-    <img id="lbImg" src="" alt=""/>
+    <img id="lbImg" src="" alt="" />
     <button class="lbn" onclick="lbNav(1)">›</button>
     <div class="lbcnt" id="lbCnt"></div>
   </div>
@@ -1397,18 +1407,15 @@
     ];
 
     let lbi = 0;
-
     function openLb(i){
       lbi = i;
       document.getElementById('lbImg').src = imgs[i];
       document.getElementById('lbCnt').textContent = (i + 1) + ' / ' + imgs.length;
       document.getElementById('lb').classList.add('open');
     }
-
     function closeLb(){
       document.getElementById('lb').classList.remove('open');
     }
-
     function lbNav(d){
       lbi = (lbi + d + imgs.length) % imgs.length;
       openLb(lbi);
@@ -1417,7 +1424,6 @@
     document.getElementById('lb').addEventListener('click', e => {
       if (e.target === document.getElementById('lb')) closeLb();
     });
-
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') closeLb();
       if (e.key === 'ArrowLeft') lbNav(-1);
