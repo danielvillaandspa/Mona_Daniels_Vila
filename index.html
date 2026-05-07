@@ -14,25 +14,27 @@
       --gold2:#d4af7a;
       --gold3:#e8d5b0;
 
-      --bg:#f7f4ee;
+      --bg:#f8f4ed;
       --bg2:#f1eadf;
-      --bg3:#ece3d4;
-      --bg4:#e6dccb;
+      --bg3:#ebe1d1;
+      --bg4:#e5dac8;
 
-      --dark:#171717;
-      --dark2:#232323;
+      --text:#181818;
       --muted:#6a6258;
-      --muted2:#80776b;
-      --line:rgba(184,147,90,.16);
-      --line2:rgba(184,147,90,.09);
+      --muted2:#8a8074;
+
+      --line:rgba(184,147,90,.18);
+      --line2:rgba(184,147,90,.10);
+      --card:#fffdf9;
     }
 
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
+
     body{
       font-family:'Frank Ruhl Libre',serif;
       background:var(--bg);
-      color:var(--dark);
+      color:var(--text);
       overflow-x:hidden;
       direction:rtl;
       min-height:100%;
@@ -46,7 +48,7 @@
       inset:0;
       background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
       pointer-events:none;
-      opacity:.12;
+      opacity:.10;
       z-index:9990;
     }
 
@@ -65,6 +67,7 @@
       box-shadow:0 8px 24px rgba(0,0,0,.05);
     }
     body.lang-en .lsw{left:auto;right:18px}
+
     .lbtn{
       background:none;
       border:none;
@@ -97,18 +100,18 @@
       padding:11px 16px 11px 13px;
       border-radius:50px;
       text-decoration:none;
-      box-shadow:0 6px 24px rgba(37,211,102,.28);
+      box-shadow:0 6px 24px rgba(37,211,102,.30);
       transition:.3s;
       animation:wap 3s ease-in-out infinite;
     }
     .wa:hover{
       transform:translateY(-3px) scale(1.03);
       animation:none;
-      box-shadow:0 12px 34px rgba(37,211,102,.38);
+      box-shadow:0 12px 34px rgba(37,211,102,.42);
     }
     @keyframes wap{
-      0%,100%{box-shadow:0 6px 24px rgba(37,211,102,.28)}
-      50%{box-shadow:0 6px 34px rgba(37,211,102,.44)}
+      0%,100%{box-shadow:0 6px 24px rgba(37,211,102,.30)}
+      50%{box-shadow:0 6px 34px rgba(37,211,102,.46)}
     }
     .wa svg{width:22px;height:22px;flex-shrink:0}
     .wa-t{font-size:11px;font-weight:500;white-space:nowrap}
@@ -123,17 +126,18 @@
       justify-content:space-between;
       align-items:center;
       z-index:1000;
-      background:rgba(255,255,255,.72);
+      background:rgba(255,255,255,.76);
       backdrop-filter:blur(14px);
       border-bottom:1px solid var(--line2);
-      transition:.4s;
+      transition:.35s;
     }
     nav.sc{
       background:rgba(255,255,255,.96);
-      padding:13px 60px;
-      border-bottom-color:var(--line);
       box-shadow:0 10px 24px rgba(0,0,0,.04);
+      border-bottom-color:var(--line);
+      padding:13px 60px;
     }
+
     .nl{
       text-decoration:none;
       display:flex;
@@ -154,6 +158,7 @@
       text-transform:uppercase;
       color:var(--muted);
     }
+
     nav ul{
       list-style:none;
       display:flex;
@@ -182,6 +187,7 @@
     body.lang-en nav ul a::after{right:auto;left:0}
     nav ul a:hover{color:var(--gold)}
     nav ul a:hover::after{width:100%}
+
     .ncta{
       padding:8px 18px !important;
       border:1px solid var(--gold) !important;
@@ -202,7 +208,7 @@
       padding:0 60px 58px;
       overflow:hidden;
       background:linear-gradient(155deg,#f8f3ea,#efe6d8 45%,#f7f4ee);
-      color:var(--dark);
+      color:var(--text);
     }
     .hbg{
       position:absolute;
@@ -222,7 +228,7 @@
       filter:saturate(.95) contrast(1.02);
     }
     .hs.on{
-      opacity:.16;
+      opacity:.10;
       animation:hz 20s ease-in-out infinite alternate;
     }
     @keyframes hz{
@@ -232,7 +238,7 @@
     .hov{
       position:absolute;
       inset:0;
-      background:linear-gradient(to top,rgba(247,244,238,.96) 0%,rgba(247,244,238,.33) 52%,rgba(247,244,238,.08) 100%);
+      background:linear-gradient(to top,rgba(247,244,238,.96) 0%,rgba(247,244,238,.30) 52%,rgba(247,244,238,.08) 100%);
       z-index:2;
     }
     .hc{
@@ -263,7 +269,7 @@
       font-size:clamp(44px,7vw,84px);
       font-weight:300;
       line-height:1.05;
-      color:var(--dark);
+      color:var(--text);
       margin-bottom:14px;
     }
     .hero h1 em{
@@ -295,14 +301,15 @@
       background:var(--gold);
       color:#fff;
       font-weight:500;
+      box-shadow:0 10px 20px rgba(184,147,90,.16);
     }
     .bp:hover{
       background:var(--gold2);
       transform:translateY(-2px);
     }
     .bg{
-      border:1px solid rgba(184,147,90,.38);
-      color:var(--dark);
+      border:1px solid rgba(184,147,90,.36);
+      color:var(--text);
       background:rgba(255,255,255,.34);
     }
     .bg:hover{
@@ -317,8 +324,8 @@
     }
 
     .sec{padding:104px 60px}
-    .sec-alt{background:var(--bg2)}
     .sec-base{background:var(--bg)}
+    .sec-alt{background:var(--bg2)}
     .sec-deep{background:var(--bg3)}
 
     .sl{
@@ -349,32 +356,45 @@
       position:relative;
       min-height:500px;
     }
+
+    .img-shell{
+      position:relative;
+      background:var(--card);
+      padding:12px;
+      border:1px solid rgba(184,147,90,.14);
+      border-radius:22px;
+      box-shadow:0 18px 40px rgba(0,0,0,.07);
+      overflow:hidden;
+    }
+    .img-shell img{
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      border-radius:14px;
+      filter:saturate(.96) contrast(1.02);
+    }
+
     .aim{
       width:100%;
       height:490px;
-      object-fit:cover;
-      display:block;
-      filter:saturate(.96) contrast(1.02);
     }
     .aima{
       position:absolute;
       width:46%;
       height:220px;
-      object-fit:cover;
       right:-20px;
       bottom:-22px;
-      border:4px solid var(--bg);
-      box-shadow:0 16px 36px rgba(0,0,0,.12);
-      filter:saturate(.96) contrast(1.02);
     }
     body.lang-en .aima{right:-20px;left:auto}
+
     .aright h2{
       font-family:'Cormorant Garamond','Frank Ruhl Libre',serif;
       font-size:clamp(32px,4vw,54px);
       font-weight:300;
       line-height:1.15;
       margin-bottom:18px;
-      color:var(--dark);
+      color:var(--text);
     }
     .aright h2 em{
       font-style:italic;
@@ -431,7 +451,7 @@
     }
 
     .pool-sec h2{
-      color:var(--dark);
+      color:var(--text);
       margin-bottom:14px;
     }
     .pool-sec h2 em{font-style:italic;color:var(--gold)}
@@ -453,32 +473,30 @@
       grid-template-columns:2fr 1fr 1fr;
       gap:8px;
     }
+
     .pg-item{
       position:relative;
       overflow:hidden;
       cursor:zoom-in;
-      line-height:0;
-      background:#fff;
-      box-shadow:0 10px 24px rgba(0,0,0,.04);
     }
-    .pg-item img{
-      width:100%;
+    .pg-item .img-shell{
       height:100%;
-      object-fit:cover;
-      display:block;
-      transition:transform .7s ease;
-      filter:saturate(.96) contrast(1.02);
+      border-radius:20px;
     }
-    .pg-item:hover img{transform:scale(1.06)}
+    .pg-item .img-shell img{
+      border-radius:12px;
+    }
     .pg-ov{
       position:absolute;
-      inset:0;
-      background:linear-gradient(to top,rgba(0,0,0,.66) 0%,transparent 55%);
+      inset:12px;
+      border-radius:18px;
+      background:linear-gradient(to top,rgba(0,0,0,.48) 0%,transparent 58%);
       opacity:0;
       transition:.35s;
       display:flex;
       align-items:flex-end;
       padding:14px;
+      pointer-events:none;
     }
     .pg-item:hover .pg-ov{opacity:1}
     .pglbl{
@@ -486,10 +504,11 @@
       font-size:9px;
       letter-spacing:3px;
       text-transform:uppercase;
+      text-shadow:0 2px 10px rgba(0,0,0,.28);
     }
 
     .rooms-sec h2{
-      color:var(--dark);
+      color:var(--text);
       margin-bottom:14px;
     }
     .rooms-sec h2 em{font-style:italic;color:var(--gold)}
@@ -509,28 +528,27 @@
       position:relative;
       overflow:hidden;
       cursor:zoom-in;
-      background:#fff;
-      box-shadow:0 10px 24px rgba(0,0,0,.04);
     }
-    .room-card img{
-      width:100%;
+    .room-card .img-shell{
+      height:100%;
+      border-radius:22px;
+    }
+    .room-card .img-shell img{
       height:300px;
-      object-fit:cover;
-      display:block;
-      transition:transform .7s ease;
-      filter:saturate(.96) contrast(1.02);
     }
-    .room-card:hover img{transform:scale(1.06)}
     .room-ov{
       position:absolute;
-      bottom:0;
-      left:0;
-      right:0;
-      background:linear-gradient(to top,rgba(0,0,0,.78) 0%,transparent 100%);
+      inset:12px;
+      border-radius:18px;
+      background:linear-gradient(to top,rgba(0,0,0,.56) 0%,transparent 100%);
       padding:18px 16px 16px;
       transform:translateY(8px);
       opacity:0;
       transition:.4s;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      pointer-events:none;
     }
     .room-card:hover .room-ov{
       opacity:1;
@@ -541,12 +559,14 @@
       font-size:16px;
       color:#fff;
       margin-bottom:3px;
+      text-shadow:0 2px 12px rgba(0,0,0,.25);
     }
     .rsub{
       font-size:9px;
       letter-spacing:2px;
       color:var(--gold3);
       text-transform:uppercase;
+      text-shadow:0 2px 12px rgba(0,0,0,.25);
     }
 
     .gal-head{
@@ -555,7 +575,7 @@
       align-items:flex-end;
       margin-bottom:40px;
     }
-    .gal-head h2{color:var(--dark)}
+    .gal-head h2{color:var(--text)}
     .gal-head h2 em{font-style:italic;color:var(--gold)}
     .gcnt{
       color:var(--muted);
@@ -573,27 +593,22 @@
       overflow:hidden;
       aspect-ratio:4/3;
       cursor:zoom-in;
-      background:#fff;
-      box-shadow:0 10px 24px rgba(0,0,0,.04);
     }
-    .gi img{
-      width:100%;
+    .gi .img-shell{
       height:100%;
-      object-fit:cover;
-      display:block;
-      transition:transform .65s ease;
-      filter:saturate(.96) contrast(1.02);
+      border-radius:20px;
     }
-    .gi:hover img{transform:scale(1.06)}
     .gov{
       position:absolute;
-      inset:0;
-      background:linear-gradient(to top,rgba(0,0,0,.68) 0%,transparent 55%);
+      inset:12px;
+      border-radius:18px;
+      background:linear-gradient(to top,rgba(0,0,0,.50) 0%,transparent 58%);
       opacity:0;
       transition:.32s;
       display:flex;
       align-items:flex-end;
       padding:13px;
+      pointer-events:none;
     }
     .gi:hover .gov{opacity:1}
     .glbl{
@@ -601,10 +616,11 @@
       font-size:9px;
       letter-spacing:3px;
       text-transform:uppercase;
+      text-shadow:0 2px 10px rgba(0,0,0,.28);
     }
 
     .fh h2{
-      color:var(--dark);
+      color:var(--text);
       margin-bottom:48px;
     }
     .fh h2 em{font-style:italic;color:var(--gold)}
@@ -717,7 +733,7 @@
       align-items:center;
     }
     .cleft h2{
-      color:var(--dark);
+      color:var(--text);
       margin-bottom:16px;
     }
     .cleft h2 em{font-style:italic;color:var(--gold)}
@@ -775,7 +791,7 @@
       margin-bottom:3px;
     }
     .cval{
-      color:var(--dark);
+      color:var(--text);
       font-size:13px;
     }
     .cright{
@@ -785,21 +801,13 @@
     .cimg{
       width:100%;
       height:500px;
-      object-fit:cover;
-      display:block;
-      box-shadow:0 18px 40px rgba(0,0,0,.08);
-      filter:saturate(.96) contrast(1.02);
     }
     .cimga{
       position:absolute;
       width:50%;
       height:200px;
-      object-fit:cover;
       left:-22px;
       bottom:-22px;
-      border:4px solid var(--bg);
-      box-shadow:0 16px 36px rgba(0,0,0,.18);
-      filter:saturate(.96) contrast(1.02);
     }
     body.lang-en .cimga{left:-22px;right:auto}
 
@@ -892,7 +900,7 @@
       padding:44px 60px;
       background:#fff;
       border-top:1px solid var(--line2);
-      color:var(--dark);
+      color:var(--text);
     }
     .flogo{
       font-family:'Cormorant Garamond',serif;
@@ -1024,12 +1032,14 @@
       .bp,.bg{width:100%;text-align:center}
       .quote{padding:58px 18px}
       .mapsec{height:260px}
+      .img-shell{padding:10px;border-radius:18px}
+      .room-card .img-shell img{height:280px}
+      .cimg{height:420px}
     }
   </style>
 </head>
 
 <body>
-
   <div class="lsw">
     <button class="lbtn active" onclick="setLang('he')">עברית</button>
     <button class="lbtn" onclick="setLang('en')">EN</button>
@@ -1047,11 +1057,11 @@
   <nav id="nav">
     <a href="#" class="nl">
       <span class="nlm">Daniel's Villa</span>
-      <span class="nls" data-he="וילה וספא · עוספיה" data-en="Villa & Spa · Isfiya" data-ar="فيلا وسبا · عسفيا">וילה וספא · עוספיה</span>
+      <span class="nls" data-he="וילה וספא · עוספיה" data-en="Villa &amp; Spa · Isfiya" data-ar="فيلا وسبا · عسفيا">וילה וספא · עוספיה</span>
     </a>
     <ul>
       <li><a href="#about" data-he="אודות" data-en="About" data-ar="عن الفيلا">אודות</a></li>
-      <li><a href="#pool" data-he="בריכה וספא" data-en="Pool & Spa" data-ar="المسبح والسبا">בריכה וספא</a></li>
+      <li><a href="#pool" data-he="בריכה וספא" data-en="Pool &amp; Spa" data-ar="المسبح والسبا">בריכה וספא</a></li>
       <li><a href="#rooms" data-he="חדרים" data-en="Rooms" data-ar="الغرف">חדרים</a></li>
       <li><a href="#gallery" data-he="גלריה" data-en="Gallery" data-ar="معرض">גלריה</a></li>
       <li><a href="#contact" class="ncta" data-he="הזמינו" data-en="Book Now" data-ar="احجز">הזמינו</a></li>
@@ -1083,8 +1093,12 @@
   <section class="sec sec-base" id="about">
     <div class="ag">
       <div class="aleft rev">
-        <img src="IMG_9036.jpeg" alt="Villa" class="aim" />
-        <img src="IMG_9038.jpeg" alt="Garden" class="aima" />
+        <div class="img-shell aim">
+          <img src="IMG_9036.jpeg" alt="Villa" />
+        </div>
+        <div class="img-shell aima">
+          <img src="IMG_9038.jpeg" alt="Garden" />
+        </div>
       </div>
       <div class="aright">
         <div class="sl rev" data-he="הסיפור שלנו" data-en="Our Story" data-ar="قصتنا">הסיפור שלנו</div>
@@ -1116,40 +1130,40 @@
   <div class="dv"></div>
 
   <section class="sec sec-alt pool-sec" id="pool">
-    <div class="sl rev" data-he="מתחם הבריכה והספא" data-en="Pool & Spa Complex" data-ar="مجمع المسبح والسبا">מתחם הבריכה והספא</div>
-    <h2 class="rev rd1" data-he="<em>בריכה</em> מחוממת,<br>ג'קוזי וסאונה" data-en="<em>Heated Pool</em>,<br>Jacuzzi & Sauna" data-ar="<em>مسبح</em> مدفأ<br>وجاكوزي وساونا"><em>בריכה</em> מחוממת,<br>ג'קוזי וסאונה</h2>
+    <div class="sl rev" data-he="מתחם הבריכה והספא" data-en="Pool &amp; Spa Complex" data-ar="مجمع المسبح والسبا">מתחם הבריכה והספא</div>
+    <h2 class="rev rd1" data-he="<em>בריכה</em> מחוממת,<br>ג'קוזי וסאונה" data-en="<em>Heated Pool</em>,<br>Jacuzzi &amp; Sauna" data-ar="<em>مسبح</em> مدفأ<br>وجاكوزي وساونا"><em>בריכה</em> מחוממת,<br>ג'קוזי וסאונה</h2>
     <p class="rev rd2" data-he="מתחם ספא מקורה ומפנק הכולל בריכת שחייה מחוממת, ג'קוזי טיפולי רב-מושבי, סאונה יבשה, מקלחת ושירותים נפרדים." data-en="A luxurious indoor spa complex featuring a heated swimming pool, multi-seat therapeutic jacuzzi, dry sauna, separate shower and restrooms." data-ar="مجمع سبا داخلي فاخر يضم مسبح سباحة مدفأ وجاكوزي علاجي متعدد المقاعد وساونا جافة ودش منفصل ومراحيض.">מתחם ספא מקורה ומפנק הכולל בריכת שחייה מחוממת, ג'קוזי טיפולי רב-מושבי, סאונה יבשה, מקלחת ושירותים נפרדים.</p>
 
     <div class="pool-grid rev">
       <div class="pg-item" style="height:260px" onclick="openLb(0)">
-        <img src="IMG_9049.jpeg" alt="Pool" />
+        <div class="img-shell"><img src="IMG_9049.jpeg" alt="Pool" /></div>
         <div class="pg-ov"><span class="pglbl" data-he="בריכה פנימית" data-en="Indoor Pool" data-ar="مسبح داخلي">בריכה פנימית</span></div>
       </div>
       <div class="pg-item" style="height:260px" onclick="openLb(1)">
-        <img src="IMG_9044.jpeg" alt="Jacuzzi" />
+        <div class="img-shell"><img src="IMG_9044.jpeg" alt="Jacuzzi" /></div>
         <div class="pg-ov"><span class="pglbl" data-he="ג'קוזי" data-en="Jacuzzi" data-ar="جاكوزي">ג'קוזי</span></div>
       </div>
       <div class="pg-item" style="height:260px" onclick="openLb(2)">
-        <img src="IMG_9045.jpeg" alt="Spa overview" />
+        <div class="img-shell"><img src="IMG_9045.jpeg" alt="Spa overview" /></div>
         <div class="pg-ov"><span class="pglbl" data-he="מתחם הספא" data-en="Spa Complex" data-ar="مجمع السبا">מתחם הספא</span></div>
       </div>
       <div class="pg-item" style="height:260px" onclick="openLb(3)">
-        <img src="IMG_9043.jpeg" alt="Sauna" />
+        <div class="img-shell"><img src="IMG_9043.jpeg" alt="Sauna" /></div>
         <div class="pg-ov"><span class="pglbl" data-he="סאונה" data-en="Sauna" data-ar="ساونا">סאונה</span></div>
       </div>
     </div>
 
     <div class="pool-grid-2 rev" style="margin-top:8px">
       <div class="pg-item" style="height:240px" onclick="openLb(4)">
-        <img src="IMG_9050.jpeg" alt="Pool view" />
+        <div class="img-shell"><img src="IMG_9050.jpeg" alt="Pool view" /></div>
         <div class="pg-ov"><span class="pglbl" data-he="נוף הבריכה" data-en="Pool View" data-ar="منظر المسبح">נוף הבריכה</span></div>
       </div>
       <div class="pg-item" style="height:240px" onclick="openLb(5)">
-        <img src="IMG_9051.jpeg" alt="Pool outdoor" />
+        <div class="img-shell"><img src="IMG_9051.jpeg" alt="Pool outdoor" /></div>
         <div class="pg-ov"><span class="pglbl" data-he="חצר הבריכה" data-en="Pool Yard" data-ar="ساحة المسبح">חצר הבריכה</span></div>
       </div>
       <div class="pg-item" style="height:240px" onclick="openLb(6)">
-        <img src="IMG_9047.jpeg" alt="Spa amenities" />
+        <div class="img-shell"><img src="IMG_9047.jpeg" alt="Spa amenities" /></div>
         <div class="pg-ov"><span class="pglbl" data-he="פינוקי הספא" data-en="Spa Amenities" data-ar="مميزات السبا">פינוקי הספא</span></div>
       </div>
     </div>
@@ -1161,23 +1175,24 @@
     <div class="sl rev" data-he="חדרי השינה" data-en="Bedrooms" data-ar="غرف النوم">חדרי השינה</div>
     <h2 class="rev rd1" data-he="<em>חדרים</em><br>מעוצבים בסגנון ייחודי" data-en="<em>Rooms</em><br>with Unique Character" data-ar="<em>غرف</em><br>بطابع فريد"><em>חדרים</em><br>מעוצבים בסגנון ייחודי</h2>
     <p class="rev rd2" data-he="כל חדר מעוצב בסגנון ייחודי — מהסגנון הבוהמי החמים ועד הקלאסי המפואר והנאוטי הים תיכוני. כל החדרים כוללים מיזוג אוויר וטלוויזיה חכמה." data-en="Each room is uniquely designed — from the warm bohemian style to the grand classic and fresh nautical Mediterranean. All rooms include air conditioning and smart TV." data-ar="كل غرفة مصممة بأسلوب فريد — من الطراز البوهيمي الدافئ إلى الكلاسيكي الفخم والبحري المتوسطي. جميع الغرف تشمل تكييف وتلفزيون ذكي.">כל חדר מעוצב בסגנון ייחודי — מהסגנון הבוהמי החמים ועד הקלאסי המפואר והנאוטי הים תיכוני. כל החדרים כוללים מיזוג אוויר וטלוויזיה חכמה.</p>
+
     <div class="rooms-grid">
       <div class="room-card rev" onclick="openLb(7)">
-        <img src="IMG_9053.jpeg" alt="Boho Room" />
+        <div class="img-shell"><img src="IMG_9053.jpeg" alt="Boho Room" /></div>
         <div class="room-ov">
           <div class="rtitle" data-he="חדר בוהמי" data-en="Boho Room" data-ar="غرفة بوهيمية">חדר בוהמי</div>
           <div class="rsub" data-he="קסם טבעי וחמים" data-en="Warm Natural Charm" data-ar="سحر طبيعي دافئ">קסם טבעי וחמים</div>
         </div>
       </div>
       <div class="room-card rev rd1" onclick="openLb(8)">
-        <img src="IMG_9037.jpeg" alt="Classic Room" />
+        <div class="img-shell"><img src="IMG_9037.jpeg" alt="Classic Room" /></div>
         <div class="room-ov">
           <div class="rtitle" data-he="חדר קלאסי" data-en="Classic Room" data-ar="غرفة كلاسيكية">חדר קלאסי</div>
           <div class="rsub" data-he="מיטת עמודים מפוארת" data-en="Grand Four-Poster Bed" data-ar="سرير كلاسيكي فاخر">מיטת עמודים מפוארת</div>
         </div>
       </div>
       <div class="room-card rev rd2" onclick="openLb(9)">
-        <img src="IMG_9041.jpeg" alt="Nautical Room" />
+        <div class="img-shell"><img src="IMG_9041.jpeg" alt="Nautical Room" /></div>
         <div class="room-ov">
           <div class="rtitle" data-he="חדר ים תיכוני" data-en="Mediterranean Room" data-ar="غرفة متوسطية">חדר ים תיכוני</div>
           <div class="rsub" data-he="עיצוב נאוטי ורענן" data-en="Fresh Nautical Design" data-ar="تصميم بحري منعش">עיצוב נאוטי ורענן</div>
@@ -1198,28 +1213,28 @@
     </div>
 
     <div class="ggrid rev">
-      <div class="gi" onclick="openLb(0)"><img src="IMG_9049.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="בריכה פנימית" data-en="Indoor Pool" data-ar="مسبح داخلي">בריכה פנימית</span></div></div>
-      <div class="gi" onclick="openLb(1)"><img src="IMG_9044.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="ג'קוזי וספא" data-en="Jacuzzi & Spa" data-ar="جاكوزي وسبا">ג'קוזי וספא</span></div></div>
-      <div class="gi" onclick="openLb(2)"><img src="IMG_9045.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="מתחם הספא" data-en="Spa Area" data-ar="منطقة السبا">מתחם הספא</span></div></div>
-      <div class="gi" onclick="openLb(3)"><img src="IMG_9043.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="סאונה" data-en="Sauna" data-ar="ساونا">סאונה</span></div></div>
+      <div class="gi" onclick="openLb(0)"><div class="img-shell"><img src="IMG_9049.jpeg" alt=""/></div><div class="gov"><span class="glbl" data-he="בריכה פנימית" data-en="Indoor Pool" data-ar="مسبح داخلي">בריכה פנימית</span></div></div>
+      <div class="gi" onclick="openLb(1)"><div class="img-shell"><img src="IMG_9044.jpeg" alt=""/></div><div class="gov"><span class="glbl" data-he="ג'קוזי וספא" data-en="Jacuzzi &amp; Spa" data-ar="جاكوزي وسبا">ג'קוזי וספא</span></div></div>
+      <div class="gi" onclick="openLb(2)"><div class="img-shell"><img src="IMG_9045.jpeg" alt=""/></div><div class="gov"><span class="glbl" data-he="מתחם הספא" data-en="Spa Area" data-ar="منطقة السبا">מתחם הספא</span></div></div>
+      <div class="gi" onclick="openLb(3)"><div class="img-shell"><img src="IMG_9043.jpeg" alt=""/></div><div class="gov"><span class="glbl" data-he="סאונה" data-en="Sauna" data-ar="ساونا">סאונה</span></div></div>
 
-      <div class="gi" onclick="openLb(4)"><img src="IMG_9050.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="נוף הבריכה" data-en="Pool View" data-ar="منظر المسبح">נוף הבריכה</span></div></div>
-      <div class="gi" onclick="openLb(5)"><img src="IMG_9051.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="חצר הבריכה" data-en="Pool Yard" data-ar="ساحة المسبح">חצר הבריכה</span></div></div>
-      <div class="gi" onclick="openLb(6)"><img src="IMG_9047.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="פינוקי ספא" data-en="Spa Amenities" data-ar="مميزات السبا">פינוקי ספא</span></div></div>
-      <div class="gi" onclick="openLb(7)"><img src="IMG_9053.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="חדר בוהמי" data-en="Boho Room" data-ar="غرفة بوهيمية">חדר בוהמי</span></div></div>
+      <div class="gi" onclick="openLb(4)"><div class="img-shell"><img src="IMG_9050.jpeg" alt=""/></div><div class="gov"><span class="glbl" data-he="נוף הבריכה" data-en="Pool View" data-ar="منظر المسبح">נוף הבריכה</span></div></div>
+      <div class="gi" onclick="openLb(5)"><div class="img-shell"><img src="IMG_9051.jpeg" alt=""/></div><div class="gov"><span class="glbl" data-he="חצר הבריכה" data-en="Pool Yard" data-ar="ساحة المسبح">חצר הבריכה</span></div></div>
+      <div class="gi" onclick="openLb(6)"><div class="img-shell"><img src="IMG_9047.jpeg" alt=""/></div><div class="gov"><span class="glbl" data-he="פינוקי ספא" data-en="Spa Amenities" data-ar="مميزات السبا">פינוקי ספא</span></div></div>
+      <div class="gi" onclick="openLb(7)"><div class="img-shell"><img src="IMG_9053.jpeg" alt=""/></div><div class="gov"><span class="glbl" data-he="חדר בוהמי" data-en="Boho Room" data-ar="غرفة بوهيمية">חדר בוהמי</span></div></div>
 
-      <div class="gi" onclick="openLb(8)"><img src="IMG_9037.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="חדר קלאסי" data-en="Classic Room" data-ar="غرفة كلاسيكية">חדר קלאסי</span></div></div>
-      <div class="gi" onclick="openLb(9)"><img src="IMG_9041.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="חדר נאוטי" data-en="Nautical Room" data-ar="غرفة بحرية">חדר נאוטי</span></div></div>
-      <div class="gi" onclick="openLb(10)"><img src="IMG_9048.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="מטבח" data-en="Kitchen" data-ar="مطبخ">מטבח</span></div></div>
-      <div class="gi" onclick="openLb(11)"><img src="IMG_9042.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="פינת אוכל" data-en="Dining Area" data-ar="منطقة الطعام">פינת אוכל</span></div></div>
+      <div class="gi" onclick="openLb(8)"><div class="img-shell"><img src="IMG_9037.jpeg" alt=""/></div><div class="gov"><span class="glbl" data-he="חדר קלאסי" data-en="Classic Room" data-ar="غرفة كلاسيكية">חדר קלאסי</span></div></div>
+      <div class="gi" onclick="openLb(9)"><div class="img-shell"><img src="IMG_9041.jpeg" alt=""/></div><div class="gov"><span class="glbl" data-he="חדר נאוטי" data-en="Nautical Room" data-ar="غرفة بحرية">חדר נאוטי</span></div></div>
+      <div class="gi" onclick="openLb(10)"><div class="img-shell"><img src="IMG_9048.jpeg" alt=""/></div><div class="gov"><span class="glbl" data-he="מטבח" data-en="Kitchen" data-ar="مطبخ">מטבח</span></div></div>
+      <div class="gi" onclick="openLb(11)"><div class="img-shell"><img src="IMG_9042.jpeg" alt=""/></div><div class="gov"><span class="glbl" data-he="פינת אוכל" data-en="Dining Area" data-ar="منطقة الطعام">פינת אוכל</span></div></div>
 
-      <div class="gi" onclick="openLb(12)"><img src="IMG_9046.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="גינה וגריל" data-en="Garden & BBQ" data-ar="حديقة وشواء">גינה וגריל</span></div></div>
-      <div class="gi" onclick="openLb(13)"><img src="IMG_9039.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="חדר אוכל בית" data-en="Home Dining" data-ar="غرفة طعام">חדר אוכל בית</span></div></div>
-      <div class="gi" onclick="openLb(14)"><img src="IMG_9040.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="חדר בוהמי 2" data-en="Boho Room 2" data-ar="غرفة بوهيمية 2">חדר בוהמי 2</span></div></div>
-      <div class="gi" onclick="openLb(15)"><img src="IMG_9036.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="חזית הוילה" data-en="Villa Front" data-ar="واجهة الفيلا">חזית הוילה</span></div></div>
+      <div class="gi" onclick="openLb(12)"><div class="img-shell"><img src="IMG_9046.jpeg" alt=""/></div><div class="gov"><span class="glbl" data-he="גינה וגריל" data-en="Garden &amp; BBQ" data-ar="حديقة وشواء">גינה וגריל</span></div></div>
+      <div class="gi" onclick="openLb(13)"><div class="img-shell"><img src="IMG_9039.jpeg" alt=""/></div><div class="gov"><span class="glbl" data-he="חדר אוכל בית" data-en="Home Dining" data-ar="غرفة طعام">חדר אוכל בית</span></div></div>
+      <div class="gi" onclick="openLb(14)"><div class="img-shell"><img src="IMG_9040.jpeg" alt=""/></div><div class="gov"><span class="glbl" data-he="חדר בוהמי 2" data-en="Boho Room 2" data-ar="غرفة بوهيمية 2">חדר בוהמי 2</span></div></div>
+      <div class="gi" onclick="openLb(15)"><div class="img-shell"><img src="IMG_9036.jpeg" alt=""/></div><div class="gov"><span class="glbl" data-he="חזית הוילה" data-en="Villa Front" data-ar="واجهة الفيلا">חזית הוילה</span></div></div>
 
-      <div class="gi" onclick="openLb(16)"><img src="IMG_9052.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="סלון" data-en="Lounge" data-ar="صالون">סלון</span></div></div>
-      <div class="gi" onclick="openLb(17)"><img src="IMG_9038.jpeg" alt=""/><div class="gov"><span class="glbl" data-he="חצר" data-en="Courtyard" data-ar="ساحة">חצר</span></div></div>
+      <div class="gi" onclick="openLb(16)"><div class="img-shell"><img src="IMG_9052.jpeg" alt=""/></div><div class="gov"><span class="glbl" data-he="סלון" data-en="Lounge" data-ar="صالون">סלון</span></div></div>
+      <div class="gi" onclick="openLb(17)"><div class="img-shell"><img src="IMG_9038.jpeg" alt=""/></div><div class="gov"><span class="glbl" data-he="חצר" data-en="Courtyard" data-ar="ساحة">חצר</span></div></div>
     </div>
   </section>
 
@@ -1242,7 +1257,7 @@
       <div class="fc rev rd1">
         <div class="fnum">02</div>
         <div class="ficon">🛁</div>
-        <h3 data-he="ג'קוזי וסאונה" data-en="Jacuzzi & Sauna" data-ar="جاكوزي وساونا">ג'קוזי וסאונה</h3>
+        <h3 data-he="ג'קוזי וסאונה" data-en="Jacuzzi &amp; Sauna" data-ar="جاكوزي وساونا">ג'קוזי וסאונה</h3>
         <p data-he="ג'קוזי טיפולי רב-מושבי וסאונה יבשה, מושלמים לרוגע ופינוק." data-en="Therapeutic jacuzzi and dry sauna for relaxation and comfort." data-ar="جاكوزي علاجي وساونا مريحة لأجواء من الاسترخاء والراحة.">ג'קוזי טיפולי רב-מושבי וסאונה יבשה, מושלמים לרוגע ופינוק.</p>
       </div>
 
@@ -1263,7 +1278,7 @@
       <div class="fc rev rd2">
         <div class="fnum">05</div>
         <div class="ficon">🌿</div>
-        <h3 data-he="גינה ופנאי" data-en="Garden & Leisure" data-ar="حديقة وترفيه">גינה ופנאי</h3>
+        <h3 data-he="גינה ופנאי" data-en="Garden &amp; Leisure" data-ar="حديقة وترفيه">גינה ופנאי</h3>
         <p data-he="גינה מטופחת, פינת גריל, שולחן פינג פונג, מיטות שיזוף ופינת עישון מקורה." data-en="Manicured garden, BBQ corner, ping pong table, sun loungers and covered smoking area." data-ar="حديقة منسقة وركن شواء وطاولة بينج بونج وكراسي استرخاء ومنطقة تدخين مسقوفة.">גינה מטופחת, פינת גריל, שולחן פינג פונג, מיטות שיזוף ופינת עישון מקורה.</p>
       </div>
     </div>
@@ -1271,7 +1286,7 @@
 
   <div class="quote rev">
     <blockquote data-he='"מתחם ספא מפנק, חדרים מרווחים, סלונים נעימים, וגינה מטופחת — חוויה אינטימית ושלווה לכל אורח."' data-en='"A luxurious spa complex, spacious rooms, comfortable lounges, and a manicured garden — an intimate and peaceful experience for every guest."' data-ar='"مجمع سبا فاخر وغرف فسيحة وصالونات مريحة وحديقة منسقة — تجربة حميمة وهادئة لكل ضيف."'>"מתחם ספא מפנק, חדרים מרווחים, סלונים נעימים, וגינה מטופחת — חוויה אינטימית ושלווה לכל אורח."</blockquote>
-    <cite data-he="— דניאל'ס וילה וספא · עוספיה" data-en="— Daniel's Villa & Spa · Isfiya" data-ar="— فيلا دانيالز وسبا · عسفيا">— דניאל'ס וילה וספא · עוספיה</cite>
+    <cite data-he="— דניאל'ס וילה וספא · עוספיה" data-en="— Daniel's Villa &amp; Spa · Isfiya" data-ar="— فيلا دانيالز وسبا · عسفيا">— דניאל'ס וילה וספא · עוספיה</cite>
   </div>
 
   <section class="sec sec-alt" id="contact">
@@ -1317,8 +1332,12 @@
       </div>
 
       <div class="cright rev rd2">
-        <img src="IMG_9044.jpeg" alt="Villa" class="cimg" />
-        <img src="IMG_9047.jpeg" alt="Spa" class="cimga" />
+        <div class="img-shell cimg">
+          <img src="IMG_9044.jpeg" alt="Villa" />
+        </div>
+        <div class="img-shell cimga">
+          <img src="IMG_9047.jpeg" alt="Spa" />
+        </div>
       </div>
     </div>
   </section>
@@ -1360,7 +1379,7 @@
     <div class="fcopy">&copy; 2025 <span>Daniel's Villa &amp; Spa</span>.</div>
     <div class="flinks">
       <a href="#about" data-he="אודות" data-en="About" data-ar="عن الفيلا">אודות</a>
-      <a href="#pool" data-he="בריכה וספא" data-en="Pool & Spa" data-ar="المسبح">בריכה וספא</a>
+      <a href="#pool" data-he="בריכה וספא" data-en="Pool &amp; Spa" data-ar="المسبح">בריכה וספא</a>
       <a href="#rooms" data-he="חדרים" data-en="Rooms" data-ar="الغرف">חדרים</a>
       <a href="#gallery" data-he="גלריה" data-en="Gallery" data-ar="معرض">גלריה</a>
       <a href="#contact" data-he="צרו קשר" data-en="Contact" data-ar="تواصل">צרו קשר</a>
@@ -1456,6 +1475,5 @@
 
     setLang(localStorage.getItem('dvl') || 'he');
   </script>
-
 </body>
 </html>
