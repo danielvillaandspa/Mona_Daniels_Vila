@@ -1,0 +1,10 @@
+{
+  "name": "daniels-villa",
+  "private": true,
+  "scripts": {
+    "build:seo": "node scripts/build-seo.mjs"
+  },
+  "devDependencies": {
+    "jsdom": "30.0.1"
+  }
+}
